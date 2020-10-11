@@ -1,0 +1,95 @@
+html{ 
+    background-color: beige;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+} 
+
+
+
+a{ 
+    text-decoration: none;
+    color: black;
+} 
+h1{ 
+    font-size: 40px;
+} 
+h2{ 
+    font-size: 30px;
+} 
+h3{ 
+    font-size: 20px;
+} 
+h4{ 
+    font-size: 15px;
+} 
+
+ul{
+    list-style: none;
+}
+
+/*-----------------------HEADER----------------------*/
+
+header{ 
+    width: 100%;
+    background-color: darkgoldenrod;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+} 
+
+header .logo{
+    width: 150px;
+    height: 150px;
+    background-color: darkorange;
+}
+
+header nav{ 
+    width: 20%;
+} 
+
+.listaNav{ 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+/*-----------------------CENTER----------------------*/
+
+.categorySeparator{
+    margin-bottom: 10px;
+}
+
+.categorySeparator h2{
+    margin: 0;
+}
+
+
+.divisorLine{
+    height: 3px;
+    width: 59%;
+    background-color: brown;
+}
+
+
+
+/*-----------------------FOOTER----------------------*/
+
+
+
+.productFooter{
+    width: 100%;
+}
+
+
+.footerInnerContainer{
+    width: 100%;
+    background-color: darkgoldenrod;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerInnerContainer h4{
+    width: 20%;
+}
+

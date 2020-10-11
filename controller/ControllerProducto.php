@@ -12,15 +12,13 @@
             $this->viewProd = new ViewProductos();
             
         }
-
-
         //Funcion que obtiene desde el Model los Productos y se los manda al view para mostrarlos
         function getAndShowHome(){
             $productos = $this->modelProd->getProductosWithCategory();   
             $this->viewProd->showHome($productos);
         }   
     }
-    
+
     $as = new ControllerProductos();
     $as -> getAndShowHome();
 ?>
