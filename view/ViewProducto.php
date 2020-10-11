@@ -15,7 +15,7 @@ class ViewProductos{
             $smarty->assign('titulo', $this->title);
             $smarty->assign('productos', $productos);
             echo "Estoy en view padreeee";
-            $smarty->display('productos.tpl'); // muestro el template
+            $smarty->display('../templates/productos.tpl'); // muestro el template
     }
    // function ShowHomeLocation(){
    //     header("Location: ".BASE_URL."home");
