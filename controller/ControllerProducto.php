@@ -20,7 +20,7 @@
             $this->viewProd->showHome($productos);
         }   
     }
-
+    
     $as = new ControllerProductos();
     $as -> getAndShowHome();
 ?>
