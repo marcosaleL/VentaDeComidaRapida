@@ -15,9 +15,9 @@
         </div>
         <nav>
             <ul class="listaNav">
-                <li>Inicio</li>
-                <li>Ofertas</li>
-                <li>Categorias</li>
+                <li><a class="button" href="">Inicio</a></li>
+                <li><a class="button" href="">Ofertas</a></li>
+                <li><a class="button" href="">Categorias</a></li>
             </ul>
         </nav>
     </header>
