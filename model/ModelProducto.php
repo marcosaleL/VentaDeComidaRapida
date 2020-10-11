@@ -1,13 +1,12 @@
 <?php
 
-//class ModelProducto{
+class ModelProducto{
     
-    /*
     private $db;
+
     function __constructor(){
         $this->db = new PDO('mysql:host=localhost;'.'dbname=test;charset=utf8', 'root', '');
     }
-    */
     
     //Funcion para obtener un arreglo de productos
     function getProductos(){
@@ -27,8 +26,7 @@
 
     //Funcion para insertar a la tabla
     function insertarProducto($nombre,$descripcion,$precio,$id_categoria){
-        $db = new PDO('mysql:host=localhost;'.'dbname=test;charset=utf8', 'root', '');
-        $sentencia = $db->prepare("INSERT INTO Producto(nombre,descripcion,precio,id_categoria) VALUES (" . "\"" . $nombre . "\",\"". $descripcion . "\"," . $precio . "," . $id_categoria . ")");
+        $sentencia = $this->db->prepare("INSERT INTO Producto(nombre,descripcion,precio,id_categoria) VALUES (" . "\"" . $nombre . "\",\"". $descripcion . "\"," . $precio . "," . $id_categoria . ")");
         $sentencia->execute();
     }
 
@@ -44,6 +42,6 @@
         $sentencia->execute();
     }
 
-//}
+}
     
 ?>
