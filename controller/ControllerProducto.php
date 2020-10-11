@@ -1,22 +1,26 @@
 <?php
-    require_once ("./model/ModelProducto");
-    require_once ("./model/ViewProducto");
-    
-    class ControllerProducto(){
+    require_once "../model/ModelProducto.php";
+    require_once "../view/ViewProducto.php";
+
+    class ControllerProductos{
 
         private $modelProd;
         private $viewProd;
 
-        function __constructor(){
-            $this-> modelProd new ModelProducto ();
-            $this -> viewProd new ViewProducto();
+        function __construct(){
+            $this->modelProd = new ModelProductos();
+            $this->viewProd = new ViewProductos();
+            
         }
 
 
         //Funcion que obtiene desde el Model los Productos y se los manda al view para mostrarlos
         function getAndShowHome(){
-            $productos = $this -> modelProd -> getProductosWithCategory();
-            $this -> viewProd -> showHome($productos);
+            $productos = $this->modelProd->getProductosWithCategory();   
+            $this->viewProd->showHome($productos);
         }   
+    }
 
+    $as = new ControllerProductos();
+    $as -> getAndShowHome();
 ?>

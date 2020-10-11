@@ -1,6 +1,6 @@
 <?php
 
-require_once "./libs/smarty/Smarty.class.php";
+require_once "../libs/smarty/Smarty.class.php";
 
 class ViewProductos{
 
@@ -11,13 +11,12 @@ class ViewProductos{
     }
 
     function ShowHome($productos = null){
-        $smarty = new Smarty();
-        $smarty->assign('titulo', $this->title);
-        $smarty->assign('productos', $productos);
-        $smarty->display('templates/productos.tpl'); // muestro el template 
+            $smarty = new Smarty();
+            $smarty->assign('titulo', $this->title);
+            $smarty->assign('productos', $productos);
+            echo "Estoy en view padreeee";
+            $smarty->display('productos.tpl'); // muestro el template
     }
-
-    this->ShowHome();
    // function ShowHomeLocation(){
    //     header("Location: ".BASE_URL."home");
    // } 

@@ -1,11 +1,11 @@
 <?php
 
-class ModelProducto{
+class ModelProductos{
     
     private $db;
 
-    function __constructor(){
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=test;charset=utf8', 'root', '');
+    function __construct(){
+        $this->db = new PDO('mysql:host=localhost;'.'dbname=VentaComidaRapida;charset=utf8', 'root', '');
     }
     
     //Funcion para obtener un arreglo de productos
