@@ -27,7 +27,7 @@ class ModelProducto{
     //Consulta para mostrar los productos con el nombre de categoria
     //SELECT Producto.*, Categoria.nombre FROM Producto INNER JOIN Categoria WHERE Producto.id_categoria = Categoria.id_categoria
     function getProductosWithCategory(){
-        $sentencia = $this->db->prepare("SELECT Producto.*, Categoria.nombre FROM Producto INNER JOIN Categoria WHERE Producto.id_categoria = Categoria.id_categoria");
+        $sentencia = $this->db->prepare("SELECT Producto.*, Categoria.nombre as nombreCategoria FROM Producto INNER JOIN Categoria WHERE Producto.id_categoria = Categoria.id_categoria ");
         $sentencia->execute();
         $producto = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $producto;
