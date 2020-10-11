@@ -1,12 +1,7 @@
 <?php
     require_once ("./model/ModelProducto");
     require_once ("./model/ViewProducto");
-
-    //Consulta que me interesa hacer
-    //SELECT Producto.*, Categoria.nombre 
-    //FROM Producto INNER JOIN Categoria 
-    //WHERE Producto.id_categoria = Categoria.id_categoria
-
+    
     class ControllerProducto(){
 
         private $modelProd;
