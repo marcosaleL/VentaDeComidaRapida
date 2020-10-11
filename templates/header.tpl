@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delivery</title>
+    <title>{$titulo}</title>
 </head>
 <body>
     <header>
@@ -12,7 +12,7 @@
                 <img src="" alt="">
             </figure>
         </div>
-            <h1>Delivery</h1>
+            <h1>{$titulo}</h1>
             <nav>
                 <ul class="listaNav">
                     <li>Inicio</li>
