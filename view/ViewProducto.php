@@ -10,14 +10,14 @@ class ViewProductos{
         $this->title = "Lista de productos";
     }
 
-    function ShowHome($productos){
+    function ShowHome($productos = null){
         $smarty = new Smarty();
-        $smarty->assign('titulo_s', $this->title);
-        $smarty->assign('productos_s', $productos);
+        $smarty->assign('titulo', $this->title);
+        $smarty->assign('productos', $productos);
         $smarty->display('templates/productos.tpl'); // muestro el template 
     }
 
-
+    this->ShowHome();
    // function ShowHomeLocation(){
    //     header("Location: ".BASE_URL."home");
    // } 

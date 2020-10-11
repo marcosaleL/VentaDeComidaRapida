@@ -24,6 +24,16 @@ class ModelProducto{
         return $producto;
     }
 
+    //Consulta para mostrar los productos con el nombre de categoria
+    //SELECT Producto.*, Categoria.nombre FROM Producto INNER JOIN Categoria WHERE Producto.id_categoria = Categoria.id_categoria
+    function getProductosWithCategory(){
+        $sentencia = $this->db->prepare("SELECT Producto.*, Categoria.nombre FROM Producto INNER JOIN Categoria WHERE Producto.id_categoria = Categoria.id_categoria");
+        $sentencia->execute();
+        $producto = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $producto;
+    }
+
+
     //Funcion para insertar a la tabla
     function insertarProducto($nombre,$descripcion,$precio,$id_categoria){
         $sentencia = $this->db->prepare("INSERT INTO Producto(nombre,descripcion,precio,id_categoria) VALUES (" . "\"" . $nombre . "\",\"". $descripcion . "\"," . $precio . "," . $id_categoria . ")");
@@ -41,7 +51,6 @@ class ModelProducto{
         $sentencia = $this->db->prepare("UPDATE Producto SET nombre=" . "\"" . $nombre . "\", descripcion=" . "\"" . $descripcion . "\", precio=" . "\"" . $precio . "\", id_categoria=" . "\"" . $id_categoria . "\"" . "WHERE id_producto = $id_producto");
         $sentencia->execute();
     }
-
 }
     
 ?>

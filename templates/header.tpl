@@ -8,22 +8,16 @@
 <body>
     <header>
         <div class="logo">
+            <figure class="figureLogo">
+                <img src="" alt="">
+            </figure>
+        </div>
             <h1>Delivery</h1>
-            <div class="divNav">
-                <label class="nav"></label>
-            </div>
+            <nav>
+                <ul class="listaNav">
+                    <li>Inicio</li>
+                    <li>Ofertas</li>
+                    <li>Categorias</li>
+                </ul>
+            </nav>
     </header>
-
-    <section>
-    
-    </section>
-
-
-
-
-    <footer>
-
-    </footer>
-    
-</body>
-</html>
