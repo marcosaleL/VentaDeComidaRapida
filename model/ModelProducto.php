@@ -1,11 +1,9 @@
 <?php
 
-// $host  = 'mysql:host=localhost;'.'dbname=VentaComidaRapida;charset=utf8';
-
 //class ModelProducto{
     
-    /*private $db;
-
+    /*
+    private $db;
     function __constructor(){
         $this->db = new PDO('mysql:host=localhost;'.'dbname=test;charset=utf8', 'root', '');
     }
@@ -47,9 +45,5 @@
     }
 
 //}
-    //$as = new ModelProducto();
-    //$as->insertarProducto("bcvd","esto son asdasas",29,1);
-    
-    insertarProducto("hola", "desc", 15, 1);
     
 ?>
