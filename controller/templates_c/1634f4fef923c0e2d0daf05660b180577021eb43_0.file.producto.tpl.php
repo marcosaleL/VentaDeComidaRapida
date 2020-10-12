@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-11 23:56:27
+/* Smarty version 3.1.34-dev-7, created on 2020-10-12 04:42:44
   from 'C:\xampp\htdocs\TPEWeb2\templates\producto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f837f8b168359_04322068',
+  'unifunc' => 'content_5f83c2a465bab5_87782765',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1634f4fef923c0e2d0daf05660b180577021eb43' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPEWeb2\\templates\\producto.tpl',
-      1 => 1602453367,
+      1 => 1602470489,
       2 => 'file',
     ),
   ),
@@ -22,14 +22,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5f837f8b168359_04322068 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f83c2a465bab5_87782765 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    
     <?php $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </h1>
-    <section class = "sectionProductos" >
-        <article class = "showArticle">  
+    <section class="sectionProductos" >
+        <article class="showArticle">  
              <!-- por cada item de productos, voy a agregando al article los products con misma categoria -->
              <!-- si encuentro uno con categoria diferente, agrego el separador de categorias -->
             <?php
@@ -43,18 +43,22 @@ echo $_smarty_tpl->tpl_vars['currentCategory']->value;
 $_prefixVariable1 = ob_get_clean();
 if ($_smarty_tpl->tpl_vars['producto']->value->nombreCategoria != $_prefixVariable1) {?>
                     <?php $_smarty_tpl->_assignInScope('currentCategory', $_smarty_tpl->tpl_vars['producto']->value->nombreCategoria);?>
-                    <div class = "categorySeparator">
-                        <h2 class = "categoryName"> <?php echo $_smarty_tpl->tpl_vars['producto']->value->nombreCategoria;?>
+                    <div class="categorySeparator">
+                        <h2> <?php echo $_smarty_tpl->tpl_vars['producto']->value->nombreCategoria;?>
  </h2>
-                        <div class = "divisorLine"></div>
-                    </div>                
+                    </div>
+                    <div class="divisorLine"></div>              
                 <?php }?>
 
-                <div class = "itemContainer">
+                <div class="itemContainer">
                         <!-- Aca tambien irian la img pero no se como asociarla al item -->
                         <!-- Quiza la solucion sea agregar la url de la img a la base de datos  -->
                         <h3><?php echo $_smarty_tpl->tpl_vars['producto']->value->nombre;?>
 </h3>
+                        <p><?php echo $_smarty_tpl->tpl_vars['producto']->value->descripcion;?>
+</p>
+                        <p><span>Precio: </span><?php echo $_smarty_tpl->tpl_vars['producto']->value->precio;?>
+</p>
                 </div>
             <?php
 }

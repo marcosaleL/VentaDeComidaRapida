@@ -8,11 +8,10 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <figure class="figureLogo">
-                <img src="" alt="">
-            </figure>
-        </div>
+         <!--<figure class="figureLogo">
+               <img class="imglogo" src="../images/logo2.png">
+         </figure>-->
+         <img class="imglogo" src="../images/logo2.png">
         <nav>
             <ul class="listaNav">
                 <li><a class="button" href="">Inicio</a></li>

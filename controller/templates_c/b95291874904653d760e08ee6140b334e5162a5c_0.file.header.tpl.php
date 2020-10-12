@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-12 01:13:02
+/* Smarty version 3.1.34-dev-7, created on 2020-10-12 05:11:33
   from 'C:\xampp\htdocs\TPEWeb2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f83917e8f4559_33734372',
+  'unifunc' => 'content_5f83c96550d487_97956870',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b95291874904653d760e08ee6140b334e5162a5c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPEWeb2\\templates\\header.tpl',
-      1 => 1602457980,
+      1 => 1602472290,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f83917e8f4559_33734372 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f83c96550d487_97956870 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,11 +32,10 @@ function content_5f83917e8f4559_33734372 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 <body>
     <header>
-        <div class="logo">
-            <figure class="figureLogo">
-                <img src="" alt="">
-            </figure>
-        </div>
+         <!--<figure class="figureLogo">
+               <img class="imglogo" src="../images/logo2.png">
+         </figure>-->
+         <img class="imglogo" src="../images/logo2.png">
         <nav>
             <ul class="listaNav">
                 <li><a class="button" href="">Inicio</a></li>
