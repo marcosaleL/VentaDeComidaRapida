@@ -8,7 +8,6 @@
     define("LOGIN", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/login');
     define("LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
 
-
     $r = new Router();
 
     // rutas
@@ -16,7 +15,7 @@
     $r->addRoute("login", "GET", "ControllerUser", "Login");
     $r->addRoute("logout", "GET", "ControllerUser", "Logout");
 
-    $r->addRoute("verifyUser", "POST", "ControllerUser", "VerifyUser");
+    $r->addRoute("verifyUser", "POST", "ControllerUser", "verifyUser");
 
     $r->addRoute("mermelada", "GET", "ControllerProducto", "Home");
 
