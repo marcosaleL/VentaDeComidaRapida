@@ -1,20 +1,14 @@
-
-<div class="container">
-
-<div class="alert alert-danger" role="alert">
-    {$message}
+{include file="./header.tpl"}
+<div class="login">
+    <h1>Login to Web App</h1>
+    <div class="alertMessage">
+        {$message}
+    </div>
+    <!--Hay que hacer un if para veficar que no ingrese datos vacio--->
+    <form action="verifyUser" method="post">
+        <p><input type="text" id="user" name="input_user" placeholder="Email" required></p>
+        <p><input type="password" class="form-control" id="pass" name="input_pass" placeholder="Password" required></p>
+        <p class="submit"><input type="submit" name="commit" value="Login"></p>
+    </form>
 </div>
-        <!--Hay que hacer un if para veficar que no ingrese datos vacio--->
-       <form action="verifyUser" method="post">
-                    <div class="form-group">
-                        <label for="user">Usuario</label>
-                        <input class="form-control" placeholder="Ingrese su correo electronico" id="user" name="input_user">
-                    </div>
-                    <div class="form-group">
-                        <label for="pass">Password</label>
-                        <input type="password" class="form-control" id="pass" name="input_pass">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Ingresar</button>
-        </form>
-</div>
-
+{include file="./footer.tpl"}

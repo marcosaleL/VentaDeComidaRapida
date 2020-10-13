@@ -1,7 +1,7 @@
 <?php
 
-    require_once "./model/ModelUser.php";
-    require_once "./view/ViewUser.php";
+    require_once "../model/ModelUser.php";
+    require_once "../view/ViewUser.php";
 
     class ControllerUser{
 
@@ -47,7 +47,6 @@
         }
         */
     
-    
         function verifyUser(){
             $user = $_POST["input_user"];
             $pass = $_POST["input_pass"];
@@ -73,7 +72,7 @@
     }
 
     $as = new ControllerUser();
-    $as -> login();
+    $as->login();
 
     /*
     //Como se generan las contraseñas hash para cargar a la base de datos
