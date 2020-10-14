@@ -4,7 +4,7 @@ class ModelProductos{
     
     private $db;
 
-    function __construct(){
+    function __constructor(){
         $this->db = new PDO('mysql:host=localhost;'.'dbname=VentaComidaRapida;charset=utf8', 'root', '');
     }
     
