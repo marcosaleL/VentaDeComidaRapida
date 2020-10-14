@@ -14,7 +14,7 @@ class ViewUser{
         $smarty = new Smarty();
         $smarty->assign('titulo_s', $this->title);
         $smarty->assign('message', $message);
-        $smarty->display('../templates/login.tpl'); // muestro el template 
+        $smarty->display('./templates/login.tpl'); // muestro el template 
     }
 }
 

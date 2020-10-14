@@ -18,7 +18,7 @@ class ViewPagina2{
             $smarty->assign('productos', $productos);
             $smarty->assign('categorias', $categorias);
             $smarty->assign('index', $index);
-            $smarty->display('../templates/pagina2.tpl'); // muestro el template
+            $smarty->display('./templates/pagina2.tpl'); // muestro el template
         //}
     }
    // function ShowHomeLocation(){

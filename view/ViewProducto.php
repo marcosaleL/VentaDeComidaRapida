@@ -16,7 +16,7 @@ class ViewProductos{
             $smarty->assign('titulo', $this->title);
             $smarty->assign('productos', $productos);
             $smarty->assign('currentCategory', "");
-            $smarty->display('../templates/producto.tpl'); // muestro el template
+            $smarty->display('./templates/producto.tpl'); // muestro el template
         }
     }
    // function ShowHomeLocation(){
