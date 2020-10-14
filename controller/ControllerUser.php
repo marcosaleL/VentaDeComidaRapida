@@ -38,7 +38,7 @@
                         $_SESSION["DIRECCION"] = $usuarioDB->direccion;
                         $_SESSION['LAST_ACTIVITY'] = time();
                         //Para redigirlo a la pagina del administrador
-                        //header("Location: ".BASE_URL."home");
+                        header("Location: ".BASE_URL."administracion");
                     }else{
                         $this->viewUser->showLogin("Contraseña incorrecta");
                     }

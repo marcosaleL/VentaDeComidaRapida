@@ -37,9 +37,11 @@ class ModelProductos{
     //Acomodar la funcion para que acepte imagen!!!!!
     //Funcion para insertar a la tabla
     function insertarProducto($nombre,$descripcion,$precio,$id_categoria,$image){
-        //$img = addslashes(file_get_contents($_FILES["$image"]["tmp_name"])); //La imagen pasaria como parametro
+        //$img = addslashes(file_get_contents($_FILES["$image"])); //La imagen pasaria como parametro
         //$sentencia = $this->db->prepare("INSERT INTO Producto(nombre,descripcion,precio,id_categoria) VALUES (" . "\"" . $nombre . "\",\"". $descripcion . "\"," . $precio . "," . $id_categoria . "," . $img . ")");
-        $sentencia = $this->db->prepare("INSERT INTO Producto(nombre,descripcion,precio,id_categoria) VALUES ('$nombre' , '$descripcion' , '$precio' , '$id_categoria')");
+        //$sentencia = $this->db->prepare("INSERT INTO Producto(nombre,descripcion,precio,id_categoria) VALUES ('$nombre' , '$descripcion' , '$precio' , '$id_categoria')");
+        $sentencia = $this->db->prepare("INSERT INTO `Producto`(`nombre`, `descripcion`, `precio`, `id_categoria`, `imagen`) VALUES ('$nombre','$descripcion',$precio,2,null)");
+        
         $sentencia->execute();
     }
 

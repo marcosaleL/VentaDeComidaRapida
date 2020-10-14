@@ -27,7 +27,7 @@ class ModelCategoria{
 
     //Funcion para insertar a la tabla una categoria
     function insertarCategoria($nombre,$descripcion){
-        $sentencia = $this->db->prepare("INSERT INTO `Categoria`(`id_categoria`, `nombre`, `descripcion`) VALUES (4,'$nombre','$descripcion')");
+        $sentencia = $this->db->prepare("INSERT INTO `Categoria`(`nombre`, `descripcion`) VALUES ('$nombre','$descripcion')");
         $sentencia->execute();
         
     }
