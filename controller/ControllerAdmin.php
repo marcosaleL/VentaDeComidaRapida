@@ -3,6 +3,7 @@
     require_once "./model/ModelProducto.php";
     require_once "./model/ModelCategoria.php";
     require_once "./view/ViewAdmin.php";
+    require_once "./view/ViewUser.php";
     require_once "./Helper.php";
 
     class ControllerAdmin{
@@ -11,19 +12,26 @@
         private $modelCat;
         private $viewAdmin;
         private $helper;
+        private $viewUser;
+        private $logged = false;
 
         function __construct(){
             $this->modelProd = new ModelProductos();
             $this->modelCat = new ModelCategoria();
             $this->viewAdmin = new ViewAdmin();
+            $this->viewUser = new ViewUser();
             $this->helper = new Helper();
         }
         //Funcion que obtiene desde el Model los Productos y se los manda al view para mostrarlos
         function GetAndShowAdministratorPage(){
-            //$this->helper->checkLoggedIn();
-            $productos = $this->modelProd->getProductos();
-            $categorias = $this->modelCat->getCategorias();  
-            $this->viewAdmin->ShowAdministratorPage($productos, $categorias);
+            $logged = $this->helper->checkLoggedIn();
+            if ($logged){
+                $productos = $this->modelProd->getProductos();
+                $categorias = $this->modelCat->getCategorias();  
+                $this->viewAdmin->ShowAdministratorPage($productos, $categorias); 
+            }else{
+                $this->viewUser->showLogin("");
+            }
         }   
 
         function addCategory(){

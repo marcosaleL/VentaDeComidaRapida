@@ -18,7 +18,7 @@
             <ul class="listaNav">
                 <li><a class="button" href="home">Inicio</a></li>
                 <li><a class="button" href="listado">Listado</a></li>
-                <li><a class="button" href="administracion">Categorias</a></li>
+                <li><a class="button" href="administracion">Administrador</a></li>
             </ul>
         </nav>
     </header>

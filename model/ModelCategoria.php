@@ -43,6 +43,8 @@ class ModelCategoria{
         $sentencia = $this->db->prepare("UPDATE Categoria SET nombre= '$nombre', descripcion= '$descripcion' WHERE nombre = '$actualName' ");
         $sentencia->execute();
     }
+
+    
 }
     
 ?>
