@@ -8,13 +8,13 @@
                 //Si usas la variables $_SESSION si o si, tenes que llamar antes a session_start() 
                 if(!isset($_SESSION["DIRECCION"])){
                     //Si no esta seteada lo redirigo al login para que pueda ingresar
-                    header("Location: ". LOGIN);
+                    header("Location: ". login);
                     die();
                 }else{
                     //Si no, compruebo la ultima actividad y por un timer y si excedio le cierro la sesion
                     //Esos 1000000 estan en segundos
                     if ( isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1000000)) { 
-                        header("Location: ". LOGOUT);
+                        header("Location: ". logout);
                         die();
                     }            
                     $_SESSION['LAST_ACTIVITY'] = time();

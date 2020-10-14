@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-14 05:08:37
-  from 'C:\xampp\htdocs\TPEWeb2\templates\producto.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-10-14 09:09:13
+  from '/opt/lampp/htdocs/VentaDeComidaRapida/templates/producto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f866bb5359652_16061590',
+  'unifunc' => 'content_5f86a419cf31b1_74195782',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '1634f4fef923c0e2d0daf05660b180577021eb43' => 
+    'f6343b353b3d631c99fb5688c18b60bc1c13b030' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\TPEWeb2\\templates\\producto.tpl',
-      1 => 1602643178,
+      0 => '/opt/lampp/htdocs/VentaDeComidaRapida/templates/producto.tpl',
+      1 => 1602643651,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5f866bb5359652_16061590 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f86a419cf31b1_74195782 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    
     <?php $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

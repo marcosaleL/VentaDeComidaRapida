@@ -53,7 +53,5 @@
         }
     }
 
-    $admin = new ControllerAdmin();
-    $admin->GetAndShowAdministratorPage();
 
 ?>
