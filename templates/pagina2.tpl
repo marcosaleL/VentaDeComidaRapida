@@ -1,7 +1,7 @@
     
     {include file="./header.tpl"}
     <div class ="mainDivPagina2">
-        <h1>{$titulo}</h1>
+        <h1  class="holaol" >{$titulo}</h1>
         <section class="sectionPagina2" >
             
             <article class="articleListCategory">  

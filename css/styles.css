@@ -214,27 +214,58 @@ header nav{
 
 
 /*-----------------------ADMIN CENTER----------------------*/
+
 .sectionAdministrator{
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .articleABSCategoria{
-    background-color: rgba(210, 105, 30, 0.3);
-    width: 50%;
+    background-color: rgba(255, 187, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    border-bottom: 1px dashed white;
+    width: 80%;
+}
+
+
+.articleABSProductos{
+    background-color: rgba(255, 102, 0, 0.322);
+    padding: 10px;
+    border-radius: 5px;
+    border-top: 1px dashed white;
+    width: 80%;
+
+}
+
+.articleABSProductos form {
+    width: 100%;
+}
+
+
+.articleABSProductos form label{
+    width: 20%;
+    display: flex;
+}
+
+.articleABSProductos form input{
+    width: 15%;
 }
 
 .articleABSCategoria form input{
-    background-color: red;
+    width: 15%;
 }
 
-.articleABSProductos{
-    background-color: rgba(255, 127, 80,0.3);
-    width: 50%;
+
+.articleABSCategoria label{
+    width: 20%;
+    display: flex;
 }
 
-.titulolo{
-    color: red;
-}
+
 
 
 
