@@ -16,11 +16,18 @@
 
     // rutas
     $r->addRoute("home", "GET", "ControllerProducto", "getAndShowHome");
+<<<<<<< HEAD
     $r->addRoute("listado", "GET", "ControllerPagina2", "getAndShowPag2");
     $r->addRoute("administracion", "GET", "ControllerAdmin", "GetAndShowAdministratorPage");
     $r->addRoute("login", "GET", "ControllerUser", "Login");
     $r->addRoute("logout", "GET", "ControllerUser", "Logout");  
 
+=======
+    $r->addRoute("login", "GET", "ControllerUser", "login");
+    $r->addRoute("logout", "GET", "ControllerUser", "logout");  
+
+    $r->addRoute("verifyUser", "POST", "ControllerUser", "verifyUser");
+>>>>>>> 60231f3adac639453984f3ad9a20ed4da8b46d18
     $r->addRoute("verifyUser", "POST", "ControllerUser", "verifyUser");
 
     //Rutas de administración
@@ -40,4 +47,3 @@
 ?>
 
 
-?>
