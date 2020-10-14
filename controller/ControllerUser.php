@@ -1,7 +1,7 @@
 <?php
 
-    require_once "../model/ModelUser.php";
-    require_once "../view/ViewUser.php";
+    require_once "./model/ModelUser.php";
+    require_once "./view/ViewUser.php";
 
     class ControllerUser{
 
@@ -71,8 +71,7 @@
         }
     }
 
-    $as = new ControllerUser();
-    $as->login();
+
 
     /*
     //Como se generan las contraseñas hash para cargar a la base de datos

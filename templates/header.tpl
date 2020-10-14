@@ -15,8 +15,8 @@
          <img class="imglogo" src="../images/logo2.png">
         <nav>
             <ul class="listaNav">
-                <li><a class="button" href="">Inicio</a></li>
-                <li><a class="button" href="">Ofertas</a></li>
+                <li><a class="button" href="home">Inicio</a></li>
+                <li><a class="button" href="">pagina2</a></li>
                 <li><a class="button" href="">Categorias</a></li>
             </ul>
         </nav>

@@ -1,8 +1,8 @@
 <?php
 
-    require_once "../view/ViewPagina2.php";
-    require_once "../model/ModelCategoria.php";
-    require_once "../model/ModelProducto.php";
+    require_once "./view/ViewPagina2.php";
+    require_once "./model/ModelCategoria.php";
+    require_once "./model/ModelProducto.php";
 
     class ControllerPagina2{
 
@@ -23,7 +23,6 @@
             $this->viewPag2->showPag2($productos, $categorias);
         }   
     }
-
-    $as = new ControllerPagina2();
-    $as -> getAndShowPag2();
+    
+  
 ?>

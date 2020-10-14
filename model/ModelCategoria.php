@@ -27,19 +27,20 @@ class ModelCategoria{
 
     //Funcion para insertar a la tabla una categoria
     function insertarCategoria($nombre,$descripcion){
-        $sentencia = $this->db->prepare("INSERT INTO Categoria(nombre,descripcion) VALUES (" . "\"" . $nombre . "\",\"". $descripcion . "\"," .  ")");
+        $sentencia = $this->db->prepare("INSERT INTO Categoria(nombre,descripcion) VALUES ('catNueva', 'descNueva' )");
+        //$sentencia = $this->db->prepare("INSERT INTO Categoria(nombre,descripcion) VALUES (" . "\"" . $nombre . "\",\"". $descripcion . "\"," .  ")");
         $sentencia->execute();
     }
 
     //Funcion para eliminar un categoria
-    function deleteCategoria($id){
-        $sentencia = $this->db->prepare("DELETE FROM Categoria WHERE id_categoria = ?");
-        $sentencia->execute(array($id));
+    function deleteCategoria($name){
+        $sentencia = $this->db->prepare("DELETE FROM Categoria WHERE nombre = ?");
+        $sentencia->execute(array($name));
     }
 
     //Funcion para update categoria
-    function updateCategoria($nombre, $descripcion, $id_categoria){
-        $sentencia = $this->db->prepare("UPDATE Categoria SET nombre=" . "\"" . $nombre . "\", descripcion=" . "\"" . $descripcion . "\", id_categoria=" . "\"" . $id_categoria . "\"" . "WHERE id_categoria = $id_categoria");
+    function updateCategoria($nombre, $descripcion, $actualName){
+        $sentencia = $this->db->prepare("UPDATE Categoria SET nombre=" . "\"" . $nombre . "\", descripcion=" . "\"" . $descripcion . "\", id_categoria=" . "\"" . $id_categoria . "\"" . " WHERE nombre = $actualName");
         $sentencia->execute();
     }
 }

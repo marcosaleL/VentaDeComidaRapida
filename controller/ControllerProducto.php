@@ -1,9 +1,9 @@
 <?php
 
-    require_once "../model/ModelProducto.php";
-    require_once "../view/ViewProducto.php";
+    require_once "./model/ModelProducto.php";
+    require_once "./view/ViewProducto.php";
 
-    class ControllerProductos{
+    class ControllerProducto{
 
         private $modelProd;
         private $viewProd;
@@ -19,6 +19,4 @@
         }   
     }
 
-    $as = new ControllerProductos();
-    $as -> getAndShowHome();
 ?>

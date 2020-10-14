@@ -4,7 +4,7 @@ class ModelProductos{
     
     private $db;
 
-    function __constructor(){
+    function __construct(){
         $this->db = new PDO('mysql:host=localhost;'.'dbname=VentaComidaRapida;charset=utf8', 'root', '');
     }
     
@@ -16,6 +16,7 @@ class ModelProductos{
         return $producto;
     }
     
+    //Acomodar la funcion para que sepa como devolver una imagen!!
     //Funcion para obtener un producto con ID
     function getProducto($id){
         $sentencia = $this->db->prepare("SELECT * FROM Producto WHERE id_producto = ?");
@@ -33,11 +34,12 @@ class ModelProductos{
         return $producto;
     }
 
-
+    //Acomodar la funcion para que acepte imagen!!!!!
     //Funcion para insertar a la tabla
-    function insertarProducto($nombre,$descripcion,$precio,$id_categoria){
-        //$img = addslashes(file_get_contents($_FILES["$imagen"]["tmp_name"])); //La imagen pasaria como parametro
-        $sentencia = $this->db->prepare("INSERT INTO Producto(nombre,descripcion,precio,id_categoria) VALUES (" . "\"" . $nombre . "\",\"". $descripcion . "\"," . $precio . "," . $id_categoria . ")");
+
+    function insertarProducto($nombre,$descripcion,$precio,$id_categoria,$image){
+        $img = addslashes(file_get_contents($_FILES["$image"]["tmp_name"])); //La imagen pasaria como parametro
+        $sentencia = $this->db->prepare("INSERT INTO Producto(nombre,descripcion,precio,id_categoria) VALUES (" . "\"" . $nombre . "\",\"". $descripcion . "\"," . $precio . "," . $id_categoria . "," . $img . ")");
         $sentencia->execute();
     }
 
@@ -47,11 +49,14 @@ class ModelProductos{
         $sentencia->execute(array($id));
     }
 
+    //Acomodar la funcion para que acepte imagen!!
     //Funcion para update producto
-    function updateProducto($nombre, $descripcion, $precio, $id_categoria, $id_producto){
-        $sentencia = $this->db->prepare("UPDATE Producto SET nombre=" . "\"" . $nombre . "\", descripcion=" . "\"" . $descripcion . "\", precio=" . "\"" . $precio . "\", id_categoria=" . "\"" . $id_categoria . "\"" . "WHERE id_producto = $id_producto");
+    function updateProducto($nombre, $descripcion, $precio, $id_categoria, $image , $actualName){
+        $img = addslashes(file_get_contents($_FILES["$image"]["tmp_name"]));
+        //$sentencia = $this->db->prepare("UPDATE Producto SET nombre=" . "\"" . $nombre . "\", descripcion=" . "\"" . $descripcion . "\", precio=" . "\"" . $precio . "\", id_categoria=" . "\"" . $id_categoria . "\", imagen=" . "\"" . $img "\"" . "WHERE nombre = $actualName" . );
+        $sentencia = $this->db->prepare("UPDATE Producto SET nombre= '$nombre', descripcion= '$descripcion', precio=$precio, id_categoria= $id_categoria , imagen= '$img' WHERE nombre = '$actualName' ");
         $sentencia->execute();
     }
 }
     
-?>
+?>  http://localhost/TPEWeb2/controller/ControllerAdmin.php
