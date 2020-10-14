@@ -116,6 +116,7 @@ header nav{
 
 .categorySeparator h2{
     background: -webkit-linear-gradient(darkgoldenrod,brown);
+    background-clip: unset;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: tomato; 
@@ -187,6 +188,7 @@ header nav{
 
 .divNameAndButton h3{
     background: -webkit-linear-gradient(black,brown);
+    background-clip: unset;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: tomato; 
@@ -208,6 +210,30 @@ header nav{
     background-size: auto;
     background-color: transparent;
     box-shadow: transparent;
+}
+
+
+/*-----------------------ADMIN CENTER----------------------*/
+.sectionAdministrator{
+    background-color: red;
+}
+
+.articleABSCategoria{
+    background-color: rgba(210, 105, 30, 0.3);
+    width: 50%;
+}
+
+.articleABSCategoria form input{
+    background-color: red;
+}
+
+.articleABSProductos{
+    background-color: rgba(255, 127, 80,0.3);
+    width: 50%;
+}
+
+.titulolo{
+    color: red;
 }
 
 
