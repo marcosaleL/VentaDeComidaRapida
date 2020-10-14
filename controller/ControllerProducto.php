@@ -19,8 +19,5 @@
         }   
     }
 
-    $admin = new ControllerProducto();
-    $admin->getAndShowHome();
-
 
 ?>

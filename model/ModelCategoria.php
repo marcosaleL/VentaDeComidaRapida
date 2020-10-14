@@ -40,7 +40,8 @@ class ModelCategoria{
 
     //Funcion para update categoria
     function updateCategoria($nombre, $descripcion, $actualName){
-        $sentencia = $this->db->prepare("UPDATE Categoria SET nombre=" . "\"" . $nombre . "\", descripcion=" . "\"" . $descripcion . "\", id_categoria=" . "\"" . $id_categoria . "\"" . " WHERE nombre = $actualName");
+        //$sentencia = $this->db->prepare("UPDATE Categoria SET nombre=" . "\"" . $nombre . "\", descripcion=" . "\"" . $descripcion . "\", id_categoria=" . "\"" . $id_categoria . "\"" . " WHERE nombre = $actualName");
+        $sentencia = $this->db->prepare("UPDATE Categoria SET nombre= '$nombre', descripcion= '$descripcion' WHERE nombre = '$actualName' ");
         $sentencia->execute();
     }
 }
