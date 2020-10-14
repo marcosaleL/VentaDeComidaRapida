@@ -59,4 +59,4 @@ class ModelProductos{
     }
 }
     
-?>  http://localhost/TPEWeb2/controller/ControllerAdmin.php
+?>
