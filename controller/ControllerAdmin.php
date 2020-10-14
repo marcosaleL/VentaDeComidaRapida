@@ -49,7 +49,7 @@
         }
 
         function removeProduct(){
-            $this->modelProd->deleteProducto($_POST['nameRemoveProduct']);
+            $this->modelProd->deleteProducto($_GET['nameRemoveProduct']);
         }
     }
 

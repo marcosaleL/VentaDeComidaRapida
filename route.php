@@ -29,8 +29,8 @@
     $r->addRoute("updateCategory","GET","ControllerAdmin","updateCategory");
     $r->addRoute("removeCategory","GET","ControllerAdmin","removeCategory");
     $r->addRoute("addProduct","POST","ControllerAdmin","addProduct");
-    $r->addRoute("updateProduct","GET","ControllerAdmin","updateCategory");
-    $r->addRoute("removeProduct","GET","ControllerAdmin","removeCategory");
+    $r->addRoute("updateProduct","GET","ControllerAdmin","updateProduct");
+    $r->addRoute("removeProduct","GET","ControllerAdmin","removeProduct");
 
     $r->setDefaultRoute("ControllerProducto", "getAndShowHome");
 

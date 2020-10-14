@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-14 22:41:50
+/* Smarty version 3.1.34-dev-7, created on 2020-10-14 23:36:36
   from '/opt/lampp/htdocs/VentaDeComidaRapida/templates/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f87628e82e343_87177716',
+  'unifunc' => 'content_5f876f649a4418_30654426',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4e74a6a9dde44bcfbf25408f212f133abc9ed524' => 
     array (
       0 => '/opt/lampp/htdocs/VentaDeComidaRapida/templates/header.tpl',
-      1 => 1602707911,
+      1 => 1602711391,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f87628e82e343_87177716 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f876f649a4418_30654426 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +43,7 @@ function content_5f87628e82e343_87177716 (Smarty_Internal_Template $_smarty_tpl)
             <ul class="listaNav">
                 <li><a class="button" href="home">Inicio</a></li>
                 <li><a class="button" href="listado">Listado</a></li>
-                <li><a class="button" href="login">Categorias</a></li>
+                <li><a class="button" href="administracion">Categorias</a></li>
             </ul>
         </nav>
     </header>
