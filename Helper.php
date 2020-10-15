@@ -1,7 +1,7 @@
 <?php
-/*Esta función se tiene que llamar en las funciones que se necesite comprobar que la sesion esta iniciada.
-            Por eso esta funcion tiene que estar en una clase auxiliar llamada Helper, entonces cada
-            vez que necesitamos consultar si esta logeado, la llamamos desde Helper.*/
+        /*Esta función se tiene que llamar en las funciones que se necesite comprobar que la sesion esta iniciada.
+        Por eso esta funcion tiene que estar en una clase auxiliar llamada Helper, entonces cada
+        vez que necesitamos consultar si esta logeado, la llamamos desde Helper.*/
         class Helper{
             public function checkLoggedIn(){
                 session_start();
