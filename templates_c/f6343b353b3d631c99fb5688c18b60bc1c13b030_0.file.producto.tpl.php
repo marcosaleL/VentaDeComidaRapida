@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-14 09:09:13
+/* Smarty version 3.1.34-dev-7, created on 2020-10-15 04:14:07
   from '/opt/lampp/htdocs/VentaDeComidaRapida/templates/producto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f86a419cf31b1_74195782',
+  'unifunc' => 'content_5f87b06f697c19_84432389',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f6343b353b3d631c99fb5688c18b60bc1c13b030' => 
     array (
       0 => '/opt/lampp/htdocs/VentaDeComidaRapida/templates/producto.tpl',
-      1 => 1602643651,
+      1 => 1602728043,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5f86a419cf31b1_74195782 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f87b06f697c19_84432389 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    
     <?php $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -58,7 +58,7 @@ if ($_smarty_tpl->tpl_vars['producto']->value->nombreCategoria != $_prefixVariab
 </h3>
                             <p><?php echo $_smarty_tpl->tpl_vars['producto']->value->descripcion;?>
 </p>
-                            <p><span>Precio: </span><?php echo $_smarty_tpl->tpl_vars['producto']->value->precio;?>
+                            <p><span>Precio: $</span><?php echo $_smarty_tpl->tpl_vars['producto']->value->precio;?>
 </p>
                     </div>
                 <?php

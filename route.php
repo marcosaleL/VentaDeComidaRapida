@@ -3,7 +3,7 @@
     require_once "controller/ControllerProducto.php";
     require_once "controller/ControllerUser.php";
     require_once "controller/ControllerAdmin.php";
-    require_once "controller/ControllerPagina2.php";
+    require_once "controller/ControllerListado.php";
     require_once "RouterClass.php";
 
     define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
@@ -16,7 +16,7 @@
 
     // rutas
     $r->addRoute("home", "GET", "ControllerProducto", "getAndShowHome");
-    $r->addRoute("listado", "GET", "ControllerPagina2", "getAndShowPag2");
+    $r->addRoute("listado", "GET", "ControllerListado", "getAndShowList");
     $r->addRoute("administracion", "GET", "ControllerAdmin", "GetAndShowAdministratorPage");
     $r->addRoute("login", "GET", "ControllerUser", "Login");
     //$r->addRoute("logout", "GET", "ControllerUser", "Logout");  

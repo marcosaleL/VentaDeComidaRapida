@@ -12,7 +12,7 @@ class ViewUser{
 
     function showLogin($message = ""){
         $smarty = new Smarty();
-        $smarty->assign('titulo_s', $this->title);
+        $smarty->assign('titulo', $this->title);
         $smarty->assign('message', $message);
         $smarty->display('./templates/login.tpl'); // muestro el template 
     }

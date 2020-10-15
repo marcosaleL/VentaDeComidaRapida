@@ -34,13 +34,13 @@
             </article>
 
             <article class = "articleABSProductos"> 
-                <form action="addProduct" method="POST">
+                <form action="addProduct" method="POST" enctype=”multipart/form-data“>
                     <h3>Agregar Producto</h3>
                     <label for="">To Add:  </label>
                     <input type="text" name="nameAddProduct" id="" placeholder="Nombre">
                     <input type="text" name="descriptionAddProduct" id="" placeholder="Descripcion">
                     <input type="text" name="precioAddProduct" id="" placeholder="Precio">
-                    <input type="file" name="imageAddProduct" id="" accept=".jpg, .jpeg, .png">
+                    {* <input type="file" name="imageUpdateProduct" id="" accept=".jpg, .jpeg, .png"> *}
                     <select name="categoryAddProduct" id="" value="Categoria">
                         {foreach from=$categorias item=categoria}
                             <option>{$categoria->nombre}</option>
@@ -57,12 +57,12 @@
                     <input type="text" name="nameUpdateProduct" id="" placeholder="Nuevo Nombre">
                     <input type="text" name="descriptionUpdateProduct" id="" placeholder="Nueva descripcion">
                     <input type="text" name="priceUpdateProduct" id="" placeholder="Nuevo precio">
-                    <select name="categoryUpdateProduct" id="" value="Categoria">
+                    <select name="categoryUpdateProduct" id="" value="">
                         {foreach from=$categorias item=categoria}
                             <option>{$categoria->nombre}</option>
                         {/foreach}
                     </select>
-                    <input type="file" name="imageUpdateProduct" id="" accept=".jpg, .jpeg, .png">
+                    {* <input type="file" name="imageUpdateProduct" id="" accept=".jpg, .jpeg, .png"> *}
                     <input type="submit" value="Update">
                 </form>
 

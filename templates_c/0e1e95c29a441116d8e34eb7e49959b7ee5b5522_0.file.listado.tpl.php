@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-15 03:30:24
-  from '/opt/lampp/htdocs/VentaDeComidaRapida/templates/pagina2.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-10-15 04:10:40
+  from '/opt/lampp/htdocs/VentaDeComidaRapida/templates/listado.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f87a63028be77_86230497',
+  'unifunc' => 'content_5f87afa05fd232_47346316',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '09f5d046f54b817d9575f77576b3215324562e02' => 
+    '0e1e95c29a441116d8e34eb7e49959b7ee5b5522' => 
     array (
-      0 => '/opt/lampp/htdocs/VentaDeComidaRapida/templates/pagina2.tpl',
-      1 => 1602725421,
+      0 => '/opt/lampp/htdocs/VentaDeComidaRapida/templates/listado.tpl',
+      1 => 1602725602,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5f87a63028be77_86230497 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f87afa05fd232_47346316 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    
     <?php $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -69,8 +69,7 @@ $_smarty_tpl->tpl_vars['producto']->do_else = false;
                             </div>
                             <div id = "div<?php echo $_smarty_tpl->tpl_vars['index']->value;?>
 " class = "hidden productDetail" >
-                                <img src="data:image/png;base64,<?php echo base64_encode($_smarty_tpl->tpl_vars['producto']->value->imagen);?>
-">
+                                
                                 <p>Descripcion: <?php echo $_smarty_tpl->tpl_vars['producto']->value->descripcion;?>
 </p>
                                 <p>Precio: $<?php echo $_smarty_tpl->tpl_vars['producto']->value->precio;?>

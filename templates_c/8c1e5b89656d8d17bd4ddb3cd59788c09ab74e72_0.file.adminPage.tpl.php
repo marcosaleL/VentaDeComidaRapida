@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-14 09:09:13
+/* Smarty version 3.1.34-dev-7, created on 2020-10-15 04:17:25
   from '/opt/lampp/htdocs/VentaDeComidaRapida/templates/adminPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f86a419cc3707_69734664',
+  'unifunc' => 'content_5f87b135731072_27030688',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8c1e5b89656d8d17bd4ddb3cd59788c09ab74e72' => 
     array (
       0 => '/opt/lampp/htdocs/VentaDeComidaRapida/templates/adminPage.tpl',
-      1 => 1602659307,
+      1 => 1602728243,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5f86a419cc3707_69734664 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f87b135731072_27030688 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    
     <?php $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -61,14 +61,13 @@ function content_5f86a419cc3707_69734664 (Smarty_Internal_Template $_smarty_tpl)
             </article>
 
             <article class = "articleABSProductos"> 
-                <form action="addProduct" method="POST">
+                <form action="addProduct" method="POST" enctype=”multipart/form-data“>
                     <h3>Agregar Producto</h3>
                     <label for="">To Add:  </label>
                     <input type="text" name="nameAddProduct" id="" placeholder="Nombre">
                     <input type="text" name="descriptionAddProduct" id="" placeholder="Descripcion">
                     <input type="text" name="precioAddProduct" id="" placeholder="Precio">
-                    <input type="file" name="imageAddProduct" id="" accept=".jpg, .jpeg, .png">
-                    <select name="categoryAddProduct" id="" value="Categoria">
+                                        <select name="categoryAddProduct" id="" value="Categoria">
                         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'categoria');
 $_smarty_tpl->tpl_vars['categoria']->do_else = true;
@@ -92,7 +91,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <input type="text" name="nameUpdateProduct" id="" placeholder="Nuevo Nombre">
                     <input type="text" name="descriptionUpdateProduct" id="" placeholder="Nueva descripcion">
                     <input type="text" name="priceUpdateProduct" id="" placeholder="Nuevo precio">
-                    <select name="categoryUpdateProduct" id="" value="Categoria">
+                    <select name="categoryUpdateProduct" id="" value="">
                         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'categoria');
 $_smarty_tpl->tpl_vars['categoria']->do_else = true;
@@ -105,8 +104,7 @@ $_smarty_tpl->tpl_vars['categoria']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </select>
-                    <input type="file" name="imageUpdateProduct" id="" accept=".jpg, .jpeg, .png">
-                    <input type="submit" value="Update">
+                                        <input type="submit" value="Update">
                 </form>
 
                 <form action="removeProduct" method="GET">

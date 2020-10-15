@@ -2,7 +2,7 @@
 
 require_once "./libs/smarty/Smarty.class.php";
 
-class ViewPagina2{
+class ViewListado{
 
     private $title;
     
@@ -10,7 +10,7 @@ class ViewPagina2{
         $this->title = "Nuestro Productos";
     }
 
-    function showPag2($productos, $categorias){
+    function showList($productos, $categorias){
         //if ($productos != null && $categoria != null){
             $index = 0;
             $smarty = new Smarty();
@@ -18,7 +18,7 @@ class ViewPagina2{
             $smarty->assign('productos', $productos);
             $smarty->assign('categorias', $categorias);
             $smarty->assign('index', $index);
-            $smarty->display('./templates/pagina2.tpl'); // muestro el template
+            $smarty->display('./templates/listado.tpl'); // muestro el template
         //}
     }
    // function ShowHomeLocation(){

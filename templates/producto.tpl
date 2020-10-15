@@ -20,7 +20,7 @@
                             <!-- Quiza la solucion sea agregar la url de la img a la base de datos  -->
                             <h3>{$producto->nombre}</h3>
                             <p>{$producto->descripcion}</p>
-                            <p><span>Precio: </span>{$producto->precio}</p>
+                            <p><span>Precio: $</span>{$producto->precio}</p>
                     </div>
                 {/foreach}
             </article>

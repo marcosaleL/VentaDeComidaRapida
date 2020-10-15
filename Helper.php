@@ -14,7 +14,7 @@
                 }else{
                     //Si no, compruebo la ultima actividad y por un timer y si excedio le cierro la sesion
                     //Esos 1000000 estan en segundos
-                    if ( isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 10)) { 
+                    if ( isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 200)) { 
                         //header("Location: ". logout);
                         return false;
                         //die();

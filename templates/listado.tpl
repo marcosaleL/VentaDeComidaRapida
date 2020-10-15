@@ -26,6 +26,7 @@
                                 <button name = "{$index}" class = "btnShowMore more"   ></button>
                             </div>
                             <div id = "div{$index}" class = "hidden productDetail" >
+                                
                                 <p>Descripcion: {$producto->descripcion}</p>
                                 <p>Precio: ${$producto->precio}</p>
                             </div>

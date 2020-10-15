@@ -48,12 +48,14 @@
 
         //Fijarse que ande bien lo de la imagen
         function addProduct(){
-            $this->modelProd->insertarProducto($_POST['nameAddProduct'],$_POST['descriptionAddProduct'],$_POST['precioAddProduct'],$_POST['categoryAddProduct'],$_POST['imageAddProduct']);
+            $id = $this->modelCat->getCategoriaByName($_POST['categoryAddProduct']);
+            $this->modelProd->insertarProducto($_POST['nameAddProduct'],$_POST['descriptionAddProduct'],$_POST['precioAddProduct'], $id->id_categoria ,$contenido);
         }
 
         //Fijarse que ande bien lo de la imagen
         function updateProduct(){
-            $this->modelProd->updateProducto($_POST['nameUpdateProduct'], $_POST['descriptionUpdateProduct'],$_POST['priceUpdateProduct'], $_POST['categoryUpdateProduct'],$_POST['imageUpdateProduct'], $_POST['nameActualProduct']);
+            $id = $this->modelCat->getCategoriaByName($_GET['categoryUpdateProduct']);
+            $this->modelProd->updateProducto($_GET['nameUpdateProduct'], $_GET['descriptionUpdateProduct'],$_GET['priceUpdateProduct'], $id->id_categoria ,$_GET['imageUpdateProduct'], $_GET['nameActualProduct']);
         }
 
         function removeProduct(){

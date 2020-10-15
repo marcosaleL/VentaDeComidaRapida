@@ -25,8 +25,7 @@ class ModelProductos{
         return $producto;
     }
 
-    //Consulta para mostrar los productos con el nombre de categoria
-    //SELECT Producto.*, Categoria.nombre FROM Producto INNER JOIN Categoria WHERE Producto.id_categoria = Categoria.id_categoria
+
     function getProductosWithCategory(){
         $sentencia = $this->db->prepare("SELECT Producto.*, Categoria.nombre as nombreCategoria FROM Producto INNER JOIN Categoria on Producto.id_categoria = Categoria.id_categoria ORDER BY id_categoria ");
         $sentencia->execute();
@@ -37,27 +36,25 @@ class ModelProductos{
     //Acomodar la funcion para que acepte imagen!!!!!
     //Funcion para insertar a la tabla
     function insertarProducto($nombre,$descripcion,$precio,$id_categoria,$image){
-        //$img = addslashes(file_get_contents($_FILES["$image"])); //La imagen pasaria como parametro
-        //$sentencia = $this->db->prepare("INSERT INTO Producto(nombre,descripcion,precio,id_categoria) VALUES (" . "\"" . $nombre . "\",\"". $descripcion . "\"," . $precio . "," . $id_categoria . "," . $img . ")");
-        //$sentencia = $this->db->prepare("INSERT INTO Producto(nombre,descripcion,precio,id_categoria) VALUES ('$nombre' , '$descripcion' , '$precio' , '$id_categoria')");
-        $sentencia = $this->db->prepare("INSERT INTO `Producto`(`nombre`, `descripcion`, `precio`, `id_categoria`, `imagen`) VALUES ('$nombre','$descripcion',$precio,2,null)");
-        
+        $sentencia = $this->db->prepare("INSERT INTO `Producto`(`nombre`, `descripcion`, `precio`, `id_categoria`, `imagen`) VALUES ('$nombre','$descripcion',$precio,$id_categoria,'$image')");
         $sentencia->execute();
+        header("Location: ".BASE_URL."administracion");
     }
 
     //Funcion para eliminar un producto
     function deleteProducto($id){
         $sentencia = $this->db->prepare("DELETE FROM Producto WHERE id_producto = ?");
         $sentencia->execute(array($id));
+        header("Location: ".BASE_URL."administracion");
     }
 
     //Acomodar la funcion para que acepte imagen!!
     //Funcion para update producto
     function updateProducto($nombre, $descripcion, $precio, $id_categoria, $image , $actualName){
-        $img = addslashes(file_get_contents($_FILES["$image"]["tmp_name"]));
         //$sentencia = $this->db->prepare("UPDATE Producto SET nombre=" . "\"" . $nombre . "\", descripcion=" . "\"" . $descripcion . "\", precio=" . "\"" . $precio . "\", id_categoria=" . "\"" . $id_categoria . "\", imagen=" . "\"" . $img "\"" . "WHERE nombre = $actualName" . );
-        $sentencia = $this->db->prepare("UPDATE Producto SET nombre= '$nombre', descripcion= '$descripcion', precio=$precio, id_categoria= $id_categoria , imagen= '$img' WHERE nombre = '$actualName' ");
+        $sentencia = $this->db->prepare("UPDATE Producto SET nombre= '$nombre', descripcion= '$descripcion', precio=$precio, id_categoria= $id_categoria , imagen= '$image' WHERE nombre = '$actualName' ");
         $sentencia->execute();
+        header("Location: ".BASE_URL."administracion");
     }
 }
     
