@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-15 04:29:49
+/* Smarty version 3.1.34-dev-7, created on 2020-10-15 04:48:31
   from 'C:\xampp\htdocs\TPEWeb2\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f87b41d6ca991_59331921',
+  'unifunc' => 'content_5f87b87f11e771_75035169',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7f39a488c62cf7d9469f3f743e2ba29ec49d253e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPEWeb2\\templates\\login.tpl',
-      1 => 1602728645,
+      1 => 1602729617,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5f87b41d6ca991_59331921 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f87b87f11e771_75035169 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="login">
@@ -31,7 +31,6 @@ $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_
         <?php echo $_smarty_tpl->tpl_vars['message']->value;?>
 
     </div>
-    <!--Hay que hacer un if para veficar que no ingrese datos vacio--->
     <form action="verifyUser" method="post">
         <p><input type="text" id="user" name="input_user" placeholder="Email" required></p>
         <p><input type="password" class="form-control" id="pass" name="input_pass" placeholder="Password" required></p>

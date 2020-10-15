@@ -31,7 +31,7 @@
     $r->addRoute("addProduct","POST","ControllerAdmin","addProduct");
     $r->addRoute("updateProduct","GET","ControllerAdmin","updateProduct");
     $r->addRoute("removeProduct","GET","ControllerAdmin","removeProduct");
-
+    
     $r->setDefaultRoute("ControllerProducto", "getAndShowHome");
 
     //run
