@@ -19,7 +19,7 @@
     $r->addRoute("listado", "GET", "ControllerListado", "getAndShowList");
     $r->addRoute("administracion", "GET", "ControllerAdmin", "GetAndShowAdministratorPage");
     $r->addRoute("login", "GET", "ControllerUser", "Login");
-    //$r->addRoute("logout", "GET", "ControllerUser", "Logout");  
+    $r->addRoute("logout", "GET", "ControllerUser", "Logout");  
 
 
     $r->addRoute("verifyUser", "POST", "ControllerUser", "verifyUser");
