@@ -18,20 +18,24 @@
     $r->addRoute("home", "GET", "ControllerProducto", "getAndShowHome");
     $r->addRoute("listado", "GET", "ControllerListado", "getAndShowList");
     $r->addRoute("administracion", "GET", "ControllerAdmin", "GetAndShowAdministratorPage");
-    $r->addRoute("login", "GET", "ControllerUser", "Login");
-    $r->addRoute("logout", "GET", "ControllerUser", "Logout");  
-
-
+    $r->addRoute("login", "GET", "ControllerAdmin", "GetAndShowAdministratorPage");
+    
+    //Usuario
+    $r->addRoute("login", "POST", "ControllerUser", "login");
     $r->addRoute("verifyUser", "POST", "ControllerUser", "verifyUser");
+    $r->addRoute("logout", "GET", "ControllerUser", "logout");  
 
-    //Rutas de administración
+    //Categorias
     $r->addRoute("addCategory","POST","ControllerAdmin","addCategory");
     $r->addRoute("updateCategory","GET","ControllerAdmin","updateCategory");
     $r->addRoute("removeCategory","GET","ControllerAdmin","removeCategory");
-    $r->addRoute("addProduct","POST","ControllerAdmin","addProduct");
+
+    //Productos
+    $r->addRoute("addProduct","GET","ControllerAdmin","addProduct");
     $r->addRoute("updateProduct","GET","ControllerAdmin","updateProduct");
     $r->addRoute("removeProduct","GET","ControllerAdmin","removeProduct");
     
+    //Default
     $r->setDefaultRoute("ControllerProducto", "getAndShowHome");
 
     //run
