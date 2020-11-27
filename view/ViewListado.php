@@ -10,15 +10,12 @@ class ViewListado{
         $this->title = "Nuestro Productos";
     }
 
-    function showList($productos, $categorias){
+    function showList($categorias){
         //if ($productos != null && $categoria != null){
-            $index = 0;
             $smarty = new Smarty();
             $smarty->assign('titulo', $this->title);
-            $smarty->assign('productos', $productos);
             $smarty->assign('categorias', $categorias);
-            $smarty->assign('index', $index);
-            $smarty->display('./templates/listado.tpl'); // muestro el template
+            $smarty->display('./templates/categorias.tpl'); // muestro el template
         //}
     }
    // function ShowHomeLocation(){

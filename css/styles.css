@@ -71,10 +71,9 @@ header{
 
 header nav{ 
     width: 35%;
-} 
+}
 
 .listaNav{ 
-    
     display: flex;
     flex-direction: row;
     justify-content: space-around;

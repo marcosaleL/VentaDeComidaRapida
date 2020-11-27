@@ -16,7 +16,13 @@
         function getAndShowHome(){
             $productos = $this->modelProd->getProductosWithCategory();   
             $this->viewProd->showHome($productos);
+        }  
+
+        function getAndShowListadoProductos(){
+            $productos = $this->modelProd->getProductos();   
+            $this->viewProd->showListadoProductos($productos);
         }   
+
     }
 
 
