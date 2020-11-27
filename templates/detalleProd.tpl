@@ -1,8 +1,17 @@
+{include file="./header.tpl"}
+    <!-- ESTE TEMPLATE  MUESTRA UN LISTADO DE CATEOGRIAS -->
+       <div class ="mainDivPagina2">
+            <h1  class="holaol" >asdkashkh</h1>
+            <section class="sectionPagina2" >
+                <article class="articleListProduct">  
+                    <p>NO SE QUE MIERDA HACE ESTOS
+                    </p>
+                        
+                            <div class = "productoContainer">
 
-{include file="header.tpl"}
-<h1>Titulo : {$game->title}</h1>
-    <div class="container">
-        
-    </div>
-<a href="home">Volver</a>
-{include file="footer.tpl"}
+                            </div>
+                        
+                </article>
+            </section>
+        </div>
+{include file="./footer.tpl"}

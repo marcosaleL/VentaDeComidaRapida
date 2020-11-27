@@ -1,6 +1,6 @@
     
     {include file="./header.tpl"}
-
+    <!-- ESTE TEMPLATE ES DEL ADMINISTRADOR -->
     <div class ="mainDivPagina2">
         <h1 class = "titulolo">{$titulo}</h1>
         <section class="sectionAdministrator">

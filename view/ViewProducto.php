@@ -32,6 +32,13 @@ class ViewProductos{
     }
 
 
+    function showProducto($producto){
+        $smarty = new Smarty();
+        $smarty->assign('titulo', "ElAle");
+        $smarty->assign('producto', $producto);
+        $smarty->display('./templates/detalleProd.tpl'); // muestro el template
+    }
+
 
     
    // function ShowHomeLocation(){

@@ -18,7 +18,7 @@ class ModelCategoria{
     
     //Funcion para obtener un categoria con ID
     function getCategoria($id){
-        $sentencia = $this->db->prepare("SELECT * FROM Categoria WHERE categoria = ?");
+        $sentencia = $this->db->prepare("SELECT * FROM Categoria WHERE id_categoria = ?");
         $sentencia->execute(array($id));
         $categoria = $sentencia->fetch(PDO::FETCH_OBJ);
         return $categoria;

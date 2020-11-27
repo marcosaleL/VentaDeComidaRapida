@@ -17,7 +17,9 @@
     // rutas
     $r->addRoute("home", "GET", "ControllerProducto", "getAndShowHome");
     $r->addRoute("productos", "GET", "ControllerProducto", "getAndShowListadoProductos");
+    $r->addRoute("productos/:ID", "GET", "ControllerProducto", "getAndShowProducto");
     $r->addRoute("categorias", "GET", "ControllerListado", "getAndShowListadoCategorias");
+    $r->addRoute("categorias/:ID", "GET", "ControllerListado", "getAndShowCategoria");
     $r->addRoute("administracion", "GET", "ControllerAdmin", "GetAndShowAdministratorPage");
     $r->addRoute("login", "GET", "ControllerAdmin", "GetAndShowAdministratorPage");
     
@@ -34,7 +36,12 @@
     //Productos
     $r->addRoute("addProduct","GET","ControllerAdmin","addProduct");
     $r->addRoute("updateProduct","GET","ControllerAdmin","updateProduct");
-    $r->addRoute("removeProduct","GET","ControllerAdmin","removeProduct");
+    $r->addRoute("removeProduct/:ID","GET","ControllerAdmin","removeProduct");
+
+//  Esta no se si es util
+//  $r->addRoute("updateProduct/:ID", "GET", "ControllerAdmin", "editProduct");
+
+
     
     //Default
     $r->setDefaultRoute("ControllerProducto", "getAndShowHome");

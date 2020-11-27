@@ -18,7 +18,19 @@
         function getAndShowListadoCategorias(){
             $categorias = $this->modelCat->getCategorias(); 
             $this->viewList->showList($categorias);
-        }   
+        } 
+
+        function getAndShowCategoria($params = null){
+            $id = $params[':ID'];
+            $categoria = $this->modelCat->getCategoria($id); 
+            if ($categoria != null)
+                $this->viewList->showCategoria($categoria);
+            else
+                echo " no esiste esa cat";        
+        }  
+
+
+
     }
     
   

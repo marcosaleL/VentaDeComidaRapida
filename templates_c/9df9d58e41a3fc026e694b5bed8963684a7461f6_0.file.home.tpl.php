@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-27 14:02:42
-  from 'C:\xampp\htdocs\TPEWeb2\templates\home.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-11-27 23:41:09
+  from '/opt/lampp/htdocs/tpweb2/VentaDeComidaRapida/templates/home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc0f8f29d4ce2_68495137',
+  'unifunc' => 'content_5fc180856167a3_32087173',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'f29999b98eb28923db69fc90a798b52d501ffca8' => 
+    '9df9d58e41a3fc026e694b5bed8963684a7461f6' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\TPEWeb2\\templates\\home.tpl',
-      1 => 1606481568,
+      0 => '/opt/lampp/htdocs/tpweb2/VentaDeComidaRapida/templates/home.tpl',
+      1 => 1606511071,
       2 => 'file',
     ),
   ),
@@ -22,10 +22,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc0f8f29d4ce2_68495137 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc180856167a3_32087173 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    
     <?php $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+    <!-- ESTE TEMPLATE  MUESTRA LOS PRODUCTOS ORDENADOS POR CATEGORIA -->
     <div class ="mainDivPagina2">
         <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </h1>

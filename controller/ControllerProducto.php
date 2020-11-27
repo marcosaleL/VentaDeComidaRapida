@@ -18,10 +18,20 @@
             $this->viewProd->showHome($productos);
         }  
 
-        function getAndShowListadoProductos(){
-            $productos = $this->modelProd->getProductos();   
-            $this->viewProd->showListadoProductos($productos);
-        }   
+        function getAndShowListadoProductos(){    
+                $productos = $this->modelProd->getProductos();   
+                $this->viewProd->showListadoProductos($productos);
+        } 
+
+
+        function getAndShowProducto($params = null){
+            $id = $params[':ID'];
+            $producto = $this->modelProd->getProducto($id);
+            if ($producto != null)
+                $this->viewProd->showProducto($producto);
+            else 
+                echo "no esiste prod";
+        }
 
     }
 

@@ -1,5 +1,6 @@
     
     {include file="./header.tpl"}
+    <!-- ESTE TEMPLATE  MUESTRA LOS PRODUCTOS ORDENADOS POR CATEGORIA -->
     <div class ="mainDivPagina2">
         <h1>{$titulo}</h1>
         <section class="sectionProductos" >
