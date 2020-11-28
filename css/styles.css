@@ -43,6 +43,12 @@ li{
     font-size: 20px;
 }
 
+.img-prod{
+    height: 200px;
+    width: 200px;
+}
+
+
 /*-----------------------HEADER----------------------*/
 
 header{ 

@@ -40,6 +40,7 @@ class ViewProductos{
     }
 
 
+
     
    // function ShowHomeLocation(){
    //     header("Location: ".BASE_URL."home");

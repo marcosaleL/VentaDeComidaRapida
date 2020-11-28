@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-27 23:44:40
-  from '/opt/lampp/htdocs/tpweb2/VentaDeComidaRapida/templates/header.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-11-28 03:09:48
+  from '/opt/lampp/htdocs/VentaDeComidaRapida/templates/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc18158bb9229_65775437',
+  'unifunc' => 'content_5fc1b16c1a2e33_24174747',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '2e7b57462ba81c63d34d73d7898555c2e2a01307' => 
+    '4e74a6a9dde44bcfbf25408f212f133abc9ed524' => 
     array (
-      0 => '/opt/lampp/htdocs/tpweb2/VentaDeComidaRapida/templates/header.tpl',
-      1 => 1606517074,
+      0 => '/opt/lampp/htdocs/VentaDeComidaRapida/templates/header.tpl',
+      1 => 1606529361,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fc18158bb9229_65775437 (Smarty_Internal_Template $_smarty_tpl) {
-?><!DOCTYPE html>
+function content_5fc1b16c1a2e33_24174747 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <base href="<?php echo BASE_URL;?>
+">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
     <?php echo '<script'; ?>
  src="js/scripts.js"><?php echo '</script'; ?>
 >
@@ -35,9 +37,6 @@ function content_5fc18158bb9229_65775437 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 <body>
     <header>
-         <!--<figure class="figureLogo">
-               <img class="imglogo" src="../images/logo2.png">
-         </figure>-->
          <img class="imglogo" src="./images/logo2.png">
         <nav>
             <ul class="listaNav">

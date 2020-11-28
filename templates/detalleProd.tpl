@@ -1,4 +1,4 @@
-{include file="./header.tpl"}
+{include file="header.tpl"}
     <!-- ESTE TEMPLATE  MUESTRA UN LISTADO DE CATEOGRIAS -->
        <div class ="mainDivPagina2">
             <h1  class="holaol" >asdkashkh</h1>

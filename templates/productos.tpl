@@ -10,7 +10,10 @@
                         {foreach from=$productos item=producto}
                             <div class = "productoContainer">
                                 <div class = "divNameAndButton">
-                                    <h3>{$producto->nombre}</h3> 
+                                    <h3>{$producto->nombre}</h3>
+                                    {if $producto->imagen}
+                                        <img src="./uploads/{$producto->imagen}" class="img-prod">
+                                    {/if}
                                     <button name = "{$index}" class = "btnShowMore more"   ></button>
                                 </div>
                                 <div id = "div{$index}" class = "hidden productDetail" >

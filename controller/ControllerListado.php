@@ -3,6 +3,7 @@
     require_once "./view/ViewListado.php";
     require_once "./model/ModelCategoria.php";
     require_once "./model/ModelProducto.php";
+    
 
     class ControllerListado{
 
@@ -27,7 +28,13 @@
                 $this->viewList->showCategoria($categoria);
             else
                 echo " no esiste esa cat";        
-        }  
+        } 
+
+
+        function removeCategory($params = null){
+            $id = $params[':ID'];
+            $this->modelCat->deleteCategoriabyID($id);
+        }
 
 
 

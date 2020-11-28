@@ -35,6 +35,7 @@
         }   
 
         function addCategory(){
+
             $this->modelCat->insertarCategoria($_POST['nameAddCategory'],$_POST['descriptionAddCategory']);
         }
 
@@ -48,8 +49,17 @@
 
         //Fijarse que ande bien lo de la imagen
         function addProduct(){
+            //ESTO NO LO ESTA HACIENDO BIEN (ES LO UNICO QUE FALTA DE IMAGEN)
+            $destino = null;
+            if(isset($_FILES['img'])){
+                $uploads = getcwd() . "/uploads/";
+                $destino = tempnam($uploads, $_FILES['img']['name']);
+                move_uploaded_file($_FILES['img']['tmp_name'],$destino);
+                $destino = basename($destino);
+            }
             $id = $this->modelCat->getCategoriaByName($_POST['categoryAddProduct']);
-            $this->modelProd->insertarProducto($_POST['nameAddProduct'],$_POST['descriptionAddProduct'],$_POST['precioAddProduct'], $id->id_categoria ,$contenido);
+            $this->modelProd->insertarProducto($_POST['nameAddProduct'],$_POST['descriptionAddProduct'],$_POST['precioAddProduct'], $id->id_categoria ,$destino);
+            
         }
 
         //Fijarse que ande bien lo de la imagen

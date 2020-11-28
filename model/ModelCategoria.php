@@ -48,6 +48,15 @@ class ModelCategoria{
         header("Location: ".BASE_URL."administracion");
     }
 
+
+    //COMPROBAR QUE ESTE LOGGED
+    function deleteCategoriabyID($id){
+        $sentencia = $this->db->prepare("DELETE FROM Categoria WHERE id_categoria = ?");
+        $sentencia->execute(array($id));
+        header("Location: ".BASE_URL."home");
+    }
+
+
     //Funcion para update categoria
     function updateCategoria($nombre, $descripcion, $actualName){
         $sentencia = $this->db->prepare("UPDATE Categoria SET nombre= '$nombre', descripcion= '$descripcion' WHERE nombre = '$actualName' ");

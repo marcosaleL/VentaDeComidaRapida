@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-27 23:41:09
-  from '/opt/lampp/htdocs/tpweb2/VentaDeComidaRapida/templates/home.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-11-28 03:02:02
+  from '/opt/lampp/htdocs/VentaDeComidaRapida/templates/home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc180856167a3_32087173',
+  'unifunc' => 'content_5fc1af9a3b11c6_91137142',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '9df9d58e41a3fc026e694b5bed8963684a7461f6' => 
+    'af90d487e5b0be5435bba67ca1a0cd24767e4dc5' => 
     array (
-      0 => '/opt/lampp/htdocs/tpweb2/VentaDeComidaRapida/templates/home.tpl',
+      0 => '/opt/lampp/htdocs/VentaDeComidaRapida/templates/home.tpl',
       1 => 1606511071,
       2 => 'file',
     ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc180856167a3_32087173 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc1af9a3b11c6_91137142 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    
     <?php $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

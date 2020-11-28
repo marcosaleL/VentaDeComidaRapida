@@ -9,6 +9,7 @@
         private $viewProd;
 
         function __construct(){
+            
             $this->modelProd = new ModelProductos();
             $this->viewProd = new ViewProductos();
         }
@@ -22,6 +23,12 @@
                 $productos = $this->modelProd->getProductos();   
                 $this->viewProd->showListadoProductos($productos);
         } 
+
+
+        function removeProduct($params = null){
+            $id = $params[':ID'];
+            $this->modelProd->deleteProducto($id);
+        }
 
 
         function getAndShowProducto($params = null){

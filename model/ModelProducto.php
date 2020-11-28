@@ -36,17 +36,24 @@ class ModelProductos{
     //Acomodar la funcion para que acepte imagen!!!!!
     //Funcion para insertar a la tabla
     function insertarProducto($nombre,$descripcion,$precio,$id_categoria,$image){
-        $sentencia = $this->db->prepare("INSERT INTO `Producto`(`nombre`, `descripcion`, `precio`, `id_categoria`, `imagen`) VALUES ('$nombre','$descripcion',$precio,$id_categoria,'$image')");
+        //$sentencia = $this->db->prepare("INSERT INTO `Producto`(`id_producto`, `nombre`, `descripcion`, `precio`, `id_categoria`, `imagen`) VALUES (10,?,?,?,?,?)");
+        $sentencia = $this->db->prepare("INSERT INTO Producto (nombre,descripcion,precio,id_categoria,imagen) VALUES ('$nombre', '$descripcion', $precio, $id_categoria,'$image')");
+        //$sentencia->execute(array($nombre,$descripcion,$precio,$id_categoria,$image));
         $sentencia->execute();
         header("Location: ".BASE_URL."administracion");
     }
 
+
+
     //Funcion para eliminar un producto
+    //COMPROBAR QUE ESTE LOGGED
     function deleteProducto($id){
         $sentencia = $this->db->prepare("DELETE FROM Producto WHERE id_producto = ?");
         $sentencia->execute(array($id));
-        header("Location: ".BASE_URL."administracion");
+        header("Location: ".BASE_URL."home");
     }
+
+ 
 
     //Acomodar la funcion para que acepte imagen!!
     //Funcion para update producto

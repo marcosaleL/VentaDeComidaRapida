@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-27 23:41:06
-  from '/opt/lampp/htdocs/tpweb2/VentaDeComidaRapida/templates/productos.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-11-28 04:45:45
+  from '/opt/lampp/htdocs/VentaDeComidaRapida/templates/productos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc1808244f006_58310987',
+  'unifunc' => 'content_5fc1c7e94fb8b1_58008764',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'b105953a61e5c9fac79f424bf01d2c4ebfc341a2' => 
+    'f3332ed24218d0053417c8fb0992f88bdcbb14bb' => 
     array (
-      0 => '/opt/lampp/htdocs/tpweb2/VentaDeComidaRapida/templates/productos.tpl',
-      1 => 1606514239,
+      0 => '/opt/lampp/htdocs/VentaDeComidaRapida/templates/productos.tpl',
+      1 => 1606534779,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc1808244f006_58310987 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc1c7e94fb8b1_58008764 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <!-- ESTE TEMPLATE  MUESTRA UN LISTADO DE CATEOGRIAS -->
@@ -43,7 +43,11 @@ $_smarty_tpl->tpl_vars['producto']->do_else = false;
                             <div class = "productoContainer">
                                 <div class = "divNameAndButton">
                                     <h3><?php echo $_smarty_tpl->tpl_vars['producto']->value->nombre;?>
-</h3> 
+</h3>
+                                    <?php if ($_smarty_tpl->tpl_vars['producto']->value->imagen) {?>
+                                        <img src="./uploads/<?php echo $_smarty_tpl->tpl_vars['producto']->value->imagen;?>
+" class="img-prod">
+                                    <?php }?>
                                     <button name = "<?php echo $_smarty_tpl->tpl_vars['index']->value;?>
 " class = "btnShowMore more"   ></button>
                                 </div>

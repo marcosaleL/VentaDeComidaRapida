@@ -31,12 +31,12 @@
     //Categorias
     $r->addRoute("addCategory","POST","ControllerAdmin","addCategory");
     $r->addRoute("updateCategory","GET","ControllerAdmin","updateCategory");
-    $r->addRoute("removeCategory/:ID","GET","ControllerAdmin","removeCategory");
+    $r->addRoute("removeCategory/:ID","GET","ControllerListado","removeCategory");
 
     //Productos
-    $r->addRoute("addProduct","GET","ControllerAdmin","addProduct");
+    $r->addRoute("addProduct","POST","ControllerAdmin","addProduct");
     $r->addRoute("updateProduct","GET","ControllerAdmin","updateProduct");
-    $r->addRoute("removeProduct/:ID","GET","ControllerAdmin","removeProduct");
+    $r->addRoute("removeProduct/:ID","GET","ControllerProducto","removeProduct");
 
 //  Esta no se si es util
 //  $r->addRoute("updateProduct/:ID", "GET", "ControllerAdmin", "editProduct");
