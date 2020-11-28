@@ -11,8 +11,6 @@ class ViewAdmin{
     }
 
     function ShowAdministratorPage($productos, $categorias){
-
-
             $index = 0;
             $smarty = new Smarty();
             $smarty->assign('titulo', $this->title);
