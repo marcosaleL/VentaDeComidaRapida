@@ -10,13 +10,18 @@
 </head>
 <body>
     <header>
-         <img class="imglogo" src="./images/logo2.png">
-        <nav>
-            <ul class="listaNav">
-                <li><a class="button" href="home">Inicio</a></li>
-                <li><a class="button" href="productos">Productos</a></li>
-                <li><a class="button" href="categorias">Categorias</a></li>
-                <li><a class="button" href="administracion">Administrador</a></li>
-            </ul>
-        </nav>
+        <img class="imglogo" src="./images/logo2.png">
+        <div class="botonera">
+            <nav>
+                <ul class="listaNav">
+                    <li><a class="button" href="home">Inicio</a></li>
+                    <li><a class="button" href="productos">Productos</a></li>
+                    <li><a class="button" href="categorias">Categorias</a></li>
+                    <li><a class="button" href="">Sign In</a></li>
+                    <li><a class="button" href="">Registrarse</a></li>
+                    <li><a class="button" href="">Sign Out</a></li>
+                    <li><a class="button" href="administracion">Administrador</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
