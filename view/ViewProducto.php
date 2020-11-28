@@ -34,9 +34,17 @@ class ViewProductos{
         $smarty = new Smarty();
         $smarty->assign('titulo', "Detalles del producto");
         $smarty->assign('producto', $producto);
-        $smarty->display('./templates/detalleProd.tpl'); // muestro el template
+        $smarty->display('./templates/detalleProd.tpl');
     }
     
+    function showNoExiste($id){
+        $smarty = new Smarty();
+        $smarty->assign('titulo', "El producto no existe");
+        $smarty->assign('nombre', "producto");
+        $smarty->assign('id', $id);
+        $smarty->display('./templates./noExiste.tpl'); 
+    }
+
    // function ShowHomeLocation(){
    //     header("Location: ".BASE_URL."home");
    // } 

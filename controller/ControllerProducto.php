@@ -35,7 +35,7 @@
             if ($producto != null)
                 $this->viewProd->showProducto($producto);
             else 
-                echo "No existe el producto que esta buscando";
+                $this->viewProd->showNoExiste($id);
         }
 
     }

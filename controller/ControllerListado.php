@@ -26,7 +26,7 @@
             if ($categoria != null)
                 $this->viewList->showCategoria($categoria);
             else
-                echo "No existe la categoria que esta buscando";        
+                $this->viewList->showNoExiste($id);        
         } 
 
         function removeCategory($params = null){

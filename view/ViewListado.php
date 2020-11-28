@@ -23,7 +23,15 @@ class ViewListado{
         $smarty = new Smarty();
         $smarty->assign('titulo', "Detalles de la categoria");
         $smarty->assign('categoria', $categoria);
-        $smarty->display('./templates/detalleCat.tpl'); // muestro el template        
+        $smarty->display('./templates/detalleCat.tpl');       
+    }
+
+    function showNoExiste($id){
+        $smarty = new Smarty();
+        $smarty->assign('titulo', "La categoria no existe");
+        $smarty->assign('nombre', "categoria");
+        $smarty->assign('id', $id);
+        $smarty->display('./templates./noExiste.tpl'); 
     }
     
    // function ShowHomeLocation(){

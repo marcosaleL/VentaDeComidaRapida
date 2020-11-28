@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+{include file="./header.tpl"}
     <!-- ESTE TEMPLATE  MUESTRA EL DETALLE DEL PRODUCTO POR ID -->
        <div class ="mainDivPagina2">
             <h1>{$titulo}</h1>
