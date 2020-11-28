@@ -25,7 +25,6 @@ class ModelProductos{
         return $producto;
     }
 
-
     function getProductosWithCategory(){
         $sentencia = $this->db->prepare("SELECT Producto.*, Categoria.nombre as nombreCategoria FROM Producto INNER JOIN Categoria on Producto.id_categoria = Categoria.id_categoria ORDER BY id_categoria ");
         $sentencia->execute();
@@ -43,8 +42,6 @@ class ModelProductos{
         header("Location: ".BASE_URL."administracion");
     }
 
-
-
     //Funcion para eliminar un producto
     //COMPROBAR QUE ESTE LOGGED
     function deleteProducto($id){
@@ -52,8 +49,6 @@ class ModelProductos{
         $sentencia->execute(array($id));
         header("Location: ".BASE_URL."home");
     }
-
- 
 
     //Acomodar la funcion para que acepte imagen!!
     //Funcion para update producto

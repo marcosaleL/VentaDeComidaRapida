@@ -21,11 +21,11 @@ class ViewListado{
 
     function showCategoria($categoria){
         $smarty = new Smarty();
+        $smarty->assign('titulo', "Detalles de la categoria");
         $smarty->assign('categoria', $categoria);
         $smarty->display('./templates/detalleCat.tpl'); // muestro el template        
     }
     
-
    // function ShowHomeLocation(){
    //     header("Location: ".BASE_URL."home");
    // } 

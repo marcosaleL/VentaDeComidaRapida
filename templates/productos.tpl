@@ -1,7 +1,7 @@
 {include file="./header.tpl"}
     <!-- ESTE TEMPLATE  MUESTRA UN LISTADO DE CATEOGRIAS -->
        <div class ="mainDivPagina2">
-            <h1  class="holaol" >{$titulo}</h1>
+            <h1>{$titulo}</h1>
             <section class="sectionPagina2" >
                 <article class="articleListProduct">  
                     <p>Hasta el momento solo disponemos de una unica sucursal. <br>

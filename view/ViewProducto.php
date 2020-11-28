@@ -19,7 +19,6 @@ class ViewProductos{
         }
     }
 
-
     function showListadoProductos($productos){
         if ($productos != null){
             $smarty = new Smarty();
@@ -31,16 +30,12 @@ class ViewProductos{
         }
     }
 
-
     function showProducto($producto){
         $smarty = new Smarty();
-        $smarty->assign('titulo', "ElAle");
+        $smarty->assign('titulo', "Detalles del producto");
         $smarty->assign('producto', $producto);
         $smarty->display('./templates/detalleProd.tpl'); // muestro el template
     }
-
-
-
     
    // function ShowHomeLocation(){
    //     header("Location: ".BASE_URL."home");

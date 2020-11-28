@@ -1,16 +1,19 @@
 {include file="header.tpl"}
-    <!-- ESTE TEMPLATE  MUESTRA UN LISTADO DE CATEOGRIAS -->
+    <!-- ESTE TEMPLATE  MUESTRA EL DETALLE DEL PRODUCTO POR ID -->
        <div class ="mainDivPagina2">
-            <h1  class="holaol" >asdkashkh</h1>
+            <h1>{$titulo}</h1>
             <section class="sectionPagina2" >
                 <article class="articleListProduct">  
-                    <p>NO SE QUE MIERDA HACE ESTOS
-                    </p>
-                        
-                            <div class = "productoContainer">
-
-                            </div>
-                        
+                    <div class = "productoContainer">
+                        <div class = "divNameAndButton">
+                            <h3>{$producto->nombre}</h3>
+                            {if $producto->imagen}
+                                <img src="./uploads/{$producto->imagen}" class="img-prod">
+                            {/if}
+                        </div>
+                        <p>Descripcion: {$producto->descripcion}</p>
+                        <p>Precio: ${$producto->precio}</p>
+                    </div>    
                 </article>
             </section>
         </div>

@@ -58,8 +58,7 @@
                 $destino = basename($destino);
             }
             $id = $this->modelCat->getCategoriaByName($_POST['categoryAddProduct']);
-            $this->modelProd->insertarProducto($_POST['nameAddProduct'],$_POST['descriptionAddProduct'],$_POST['precioAddProduct'], $id->id_categoria ,$destino);
-            
+            $this->modelProd->insertarProducto($_POST['nameAddProduct'],$_POST['descriptionAddProduct'],$_POST['precioAddProduct'], $id->id_categoria ,$destino);   
         }
 
         //Fijarse que ande bien lo de la imagen

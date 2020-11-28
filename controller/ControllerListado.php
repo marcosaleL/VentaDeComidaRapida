@@ -9,7 +9,6 @@
 
         private $modelCat;
         private $viewList;
-       
 
         function __construct(){
             $this->modelCat = new ModelCategoria();
@@ -27,18 +26,14 @@
             if ($categoria != null)
                 $this->viewList->showCategoria($categoria);
             else
-                echo " no esiste esa cat";        
+                echo "No existe la categoria que esta buscando";        
         } 
-
 
         function removeCategory($params = null){
             $id = $params[':ID'];
             $this->modelCat->deleteCategoriabyID($id);
         }
 
-
-
-    }
-    
+    }    
   
 ?>

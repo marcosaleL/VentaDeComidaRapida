@@ -24,12 +24,10 @@
                 $this->viewProd->showListadoProductos($productos);
         } 
 
-
         function removeProduct($params = null){
             $id = $params[':ID'];
             $this->modelProd->deleteProducto($id);
         }
-
 
         function getAndShowProducto($params = null){
             $id = $params[':ID'];
@@ -37,7 +35,7 @@
             if ($producto != null)
                 $this->viewProd->showProducto($producto);
             else 
-                echo "no esiste prod";
+                echo "No existe el producto que esta buscando";
         }
 
     }
