@@ -40,8 +40,6 @@
 
 //  Esta no se si es util
 //  $r->addRoute("updateProduct/:ID", "GET", "ControllerAdmin", "editProduct");
-
-
     
     //Default
     $r->setDefaultRoute("ControllerProducto", "getAndShowHome");
