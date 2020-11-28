@@ -2,8 +2,8 @@
     {include file="./header.tpl"}
     <!-- ESTE TEMPLATE  MUESTRA LOS PRODUCTOS ORDENADOS POR CATEGORIA -->
     <div class ="mainDivPagina2">
-        <h1>{$titulo}</h1>
-        <section class="sectionProductos" >
+        <h1 class="titulo">{$titulo}</h1>
+        <section class="sectionProductos">
             <article class="showArticle">  
                 <!-- por cada item de productos, voy a agregando al article los products con misma categoria -->
                 <!-- si encuentro uno con categoria diferente, agrego el separador de categorias -->

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-28 12:42:23
+/* Smarty version 3.1.34-dev-7, created on 2020-11-28 14:48:01
   from 'C:\xampp\htdocs\TPEWeb2\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc2379f781720_57478176',
+  'unifunc' => 'content_5fc255116afc45_07171088',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7f39a488c62cf7d9469f3f743e2ba29ec49d253e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPEWeb2\\templates\\login.tpl',
-      1 => 1602729617,
+      1 => 1606571265,
       2 => 'file',
     ),
   ),
@@ -22,11 +22,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc2379f781720_57478176 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc255116afc45_07171088 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="login">
-    <h1>Login to Web App</h1>
+    <h1 class="titulo">Login to Web App</h1>
     <div class="alertMessage">
         <?php echo $_smarty_tpl->tpl_vars['message']->value;?>
 

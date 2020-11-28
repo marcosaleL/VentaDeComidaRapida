@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-28 12:41:49
+/* Smarty version 3.1.34-dev-7, created on 2020-11-28 14:47:56
   from 'C:\xampp\htdocs\TPEWeb2\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc2377d21b2a3_68662819',
+  'unifunc' => 'content_5fc2550c4c1997_23876707',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f29999b98eb28923db69fc90a798b52d501ffca8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPEWeb2\\templates\\home.tpl',
-      1 => 1606561925,
+      1 => 1606571260,
       2 => 'file',
     ),
   ),
@@ -22,15 +22,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc2377d21b2a3_68662819 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc2550c4c1997_23876707 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    
     <?php $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <!-- ESTE TEMPLATE  MUESTRA LOS PRODUCTOS ORDENADOS POR CATEGORIA -->
     <div class ="mainDivPagina2">
-        <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
+        <h1 class="titulo"><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </h1>
-        <section class="sectionProductos" >
+        <section class="sectionProductos">
             <article class="showArticle">  
                 <!-- por cada item de productos, voy a agregando al article los products con misma categoria -->
                 <!-- si encuentro uno con categoria diferente, agrego el separador de categorias -->

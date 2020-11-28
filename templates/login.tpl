@@ -1,6 +1,6 @@
 {include file="./header.tpl"}
 <div class="login">
-    <h1>Login to Web App</h1>
+    <h1 class="titulo">Login to Web App</h1>
     <div class="alertMessage">
         {$message}
     </div>

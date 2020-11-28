@@ -1,18 +1,18 @@
 {include file="./header.tpl"}
     <!-- ESTE TEMPLATE  MUESTRA EL DETALLE DEL PRODUCTO POR ID -->
        <div class ="mainDivPagina2">
-            <h1>{$titulo}</h1>
+            <h1 class="titulo">{$titulo}</h1>
             <section class="sectionPagina2" >
                 <article class="articleListProduct">  
                     <div class = "productoContainer">
                         <div class = "divNameAndButton">
-                            <h3>{$producto->nombre}</h3>
+                            <h3 class="listado">{$producto->nombre}</h3>
                             {if $producto->imagen}
                                 <img src="./uploads/{$producto->imagen}" class="img-prod">
                             {/if}
                         </div>
-                        <p>Descripcion: {$producto->descripcion}</p>
-                        <p>Precio: ${$producto->precio}</p>
+                        <p class="texto">Descripcion: {$producto->descripcion}</p>
+                        <p class="texto">Precio: ${$producto->precio}</p>
                     </div>    
                 </article>
             </section>

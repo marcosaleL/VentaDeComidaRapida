@@ -48,6 +48,12 @@ li{
     width: 200px;
 }
 
+.texto {
+    color: #599bb3;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+}
+
 
 /*-----------------------HEADER----------------------*/
 
@@ -110,6 +116,13 @@ header nav{
 .button:active {
 	position: relative;
 	top: 1px;
+}
+
+/*----------------------DEL TEMPLATE noExiste.tpl-------------*/
+
+.listado {
+    color: #9F6000;
+    text-shadow: 1px 1px 2px black;
 }
 
 /*-----------------------CENTER----------------------*/
@@ -191,8 +204,9 @@ header nav{
     padding: 0;
 }
 
-.divNameAndButton h3{
-    background: -webkit-linear-gradient(black,brown);
+
+.titulo{
+    background: -webkit-linear-gradient(#eef2f5,#9F6000);
     background-clip: unset;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
