@@ -20,37 +20,29 @@
         function logout(){
             session_start();
             session_destroy();
-            //Una vez que se destruye la sesion, lo podemos llevar a la HOME, generalmente se la lleva
-            //al login
             header("Location: ". login);
         }
 
-    
         function verifyUser(){
             $user = $_POST["input_user"];
             $pass = $_POST["input_pass"];
             if(isset($user)){
                 $usuarioDB = $this->modelUser->getUser($user);
                 if(isset($usuarioDB) && $usuarioDB){
-                    // Existe el usuario    
                     if (password_verify($pass, $usuarioDB->password)){
                         session_start();
                         $_SESSION["DIRECCION"] = $usuarioDB->direccion;
                         $_SESSION['LAST_ACTIVITY'] = time();
-                        //Para redigirlo a la pagina del administrador
                         header("Location: ".BASE_URL."administracion");
                     }else{
                         $this->viewUser->showLogin("Contraseña incorrecta");
                     }
                 }else{
-                    // No existe el user en la DB
                     $this->viewUser->showLogin("El usuario no existe");
                 }
             }
         }
     }
-
-
 
     /*
     //Como se generan las contraseñas hash para cargar a la base de datos

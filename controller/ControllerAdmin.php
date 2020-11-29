@@ -22,6 +22,7 @@
             $this->viewUser = new ViewUser();
             $this->helper = new Helper();
         }
+        
         //Funcion que obtiene desde el Model los Productos y se los manda al view para mostrarlos
         function GetAndShowAdministratorPage(){
             $logged = $this->helper->checkLoggedIn();
@@ -35,7 +36,6 @@
         }   
 
         function addCategory(){
-
             $this->modelCat->insertarCategoria($_POST['nameAddCategory'],$_POST['descriptionAddCategory']);
         }
 
