@@ -73,10 +73,6 @@
                     <input type="submit" value="Delete">
                 </form>
             </article>
-            <form action="logout" method="GET">
-                <input type="submit" value="Logout">
-            </form>
-            
         </section>
     </div>
 
