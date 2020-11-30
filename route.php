@@ -23,10 +23,14 @@
     $r->addRoute("administracion", "GET", "ControllerAdmin", "GetAndShowAdministratorPage");
     $r->addRoute("login", "GET", "ControllerAdmin", "GetAndShowAdministratorPage");
     
+    //Registro
+    $r->addRoute("registro", "GET", "ControllerUser", "registro");
+
     //Usuario
     $r->addRoute("login", "POST", "ControllerUser", "login");
     $r->addRoute("verifyUser", "POST", "ControllerUser", "verifyUser");
     $r->addRoute("logout", "GET", "ControllerUser", "logout");  
+
 
     //Categorias
     $r->addRoute("addCategory","POST","ControllerAdmin","addCategory");
