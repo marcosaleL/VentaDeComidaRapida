@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-28 14:16:22
+/* Smarty version 3.1.34-dev-7, created on 2020-11-30 20:22:57
   from 'C:\xampp\htdocs\TPEWeb2\templates.\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc24da6a358a7_85474551',
+  'unifunc' => 'content_5fc5469196d768_67205077',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f6018fbca36fb767c79eb3877d358d1f8221cd02' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPEWeb2\\templates.\\header.tpl',
-      1 => 1606568646,
+      1 => 1606683743,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fc24da6a358a7_85474551 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc5469196d768_67205077 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <html lang="en">
 <head>
@@ -37,15 +37,20 @@ function content_5fc24da6a358a7_85474551 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 <body>
     <header>
-         <img class="imglogo" src="./images/logo2.png">
-        <nav>
-            <ul class="listaNav">
-                <li><a class="button" href="home">Inicio</a></li>
-                <li><a class="button" href="productos">Productos</a></li>
-                <li><a class="button" href="categorias">Categorias</a></li>
-                <li><a class="button" href="administracion">Administrador</a></li>
-            </ul>
-        </nav>
+        <img class="imglogo" src="./images/logo2.png">
+        <div class="botonera">
+            <nav>
+                <ul class="listaNav">
+                    <li><a class="button" href="home">Inicio</a></li>
+                    <li><a class="button" href="productos">Productos</a></li>
+                    <li><a class="button" href="categorias">Categorias</a></li>
+                    <li><a class="button" href="login">Sign In</a></li>
+                    <li><a class="button" href="">Registrarse</a></li>
+                    <li><a class="button" href="">Sign Out</a></li>
+                    <li><a class="button" href="administracion">Administrador</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 <?php }
 }

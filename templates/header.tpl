@@ -18,7 +18,7 @@
                     <li><a class="button" href="productos">Productos</a></li>
                     <li><a class="button" href="categorias">Categorias</a></li>
                     <li><a class="button" href="login">Sign In</a></li>
-                    <li><a class="button" href="">Registrarse</a></li>
+                    <li><a class="button" href="registro">Registrarse</a></li>
                     <li><a class="button" href="">Sign Out</a></li>
                     <li><a class="button" href="administracion">Administrador</a></li>
                 </ul>
