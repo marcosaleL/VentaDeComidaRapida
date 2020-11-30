@@ -13,7 +13,12 @@
                 <label for="">Dirección de correo electronico:</label>
                 <input type="text" name="nameAddCategory" id="" placeholder="Dirección de correo electronico" required>
                 <label for="">Telefono:</label>
-                <input type="number" name="descriptionAddCategory" id="" placeholder="Telefono" required>
+                <input type="email" name="descriptionAddCategory" id="" placeholder="Telefono" required>
+                <label for="">Contraseña:</label>
+                <input type="password" name="descriptionAddCategory" id="" placeholder="Contraseña" required>
+                <form action="" method="GET">
+                    <input type="submit" value="Registrarse">
+                </form>
             </form>
         </article>
     </section>
