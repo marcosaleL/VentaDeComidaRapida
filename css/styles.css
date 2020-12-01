@@ -168,6 +168,8 @@ header nav{
     width: 90%;
 }
 
+
+
 /*-----------------------Listado CENTER----------------------*/
 
 
@@ -190,7 +192,7 @@ header nav{
 
 .divNameAndButton{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     width: 15%;
 }
@@ -216,20 +218,44 @@ header nav{
     font-size: 20px;
 }
 
-.more{
-    background-image: url("../images/ShowMore.png");
-    background-size: auto;
-    background-color: transparent;
-    box-shadow: transparent;
+.botonDetalles{
+    background: #E74C3C;
+    box-shadow: 0px 5px 0px 0px #C0392B;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+    text-align:center;
+    text-decoration: none;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    display:inline-block;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    background: #df6767;
+    padding: 7px 20px;
+    white-space: nowrap;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 100px;
+    margin: 10px 5px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
-
-.less{
-    background-image: url("../images/ShowLess.png");
-    background-size: auto;
-    background-color: transparent;
-    box-shadow: transparent;
+  
+.botonDetalles:hover{
+    background: #ff5242;
 }
+  
+.botonDetalles:active{
+    box-shadow: 0px 2px 0px 0px #C0392B;
+}
+  
 
+.contenedorProducto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /*-----------------------ADMIN CENTER----------------------*/
 
@@ -418,7 +444,19 @@ input[type=submit]:active {
 
 
 
+/*-----------------------SECCION COMENTARIOS---------------------*/
 
+.divComentarios{
+
+}
+
+.listaComentarios{
+
+}
+
+.liComentario{
+
+}
 
 
 /*-----------------------FOOTER----------------------*/

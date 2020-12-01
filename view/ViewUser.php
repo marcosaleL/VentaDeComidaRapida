@@ -16,12 +16,6 @@ class ViewUser{
         $smarty->assign('message', $message);
         $smarty->display('./templates/login.tpl'); // muestro el template 
     }
-
-    function showRegistro(){
-        $smarty = new Smarty();
-        $smarty->assign('titulo', "Registro de usuario");
-        $smarty->display('./templates/registro.tpl');
-    }
 }
 
 

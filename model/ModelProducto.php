@@ -34,13 +34,23 @@ class ModelProductos{
 
     //Acomodar la funcion para que acepte imagen!!!!!
     //Funcion para insertar a la tabla
-    function insertarProducto($nombre,$descripcion,$precio,$id_categoria,$image){
-        //$sentencia = $this->db->prepare("INSERT INTO `Producto`(`id_producto`, `nombre`, `descripcion`, `precio`, `id_categoria`, `imagen`) VALUES (10,?,?,?,?,?)");
-        $sentencia = $this->db->prepare("INSERT INTO Producto (nombre,descripcion,precio,id_categoria,imagen) VALUES ('$nombre', '$descripcion', $precio, $id_categoria,'$image')");
-        //$sentencia->execute(array($nombre,$descripcion,$precio,$id_categoria,$image));
-        $sentencia->execute();
+    function insertarProducto($nombre,$descripcion,$precio,$id_categoria,$imagen){
+        $filepath = null;
+        if ($imagen)
+            $filepath = $this->moveFile($imagen);
+        $sentencia = $this->db->prepare("INSERT INTO Producto (nombre,descripcion,precio,id_categoria,imagen) VALUES (?,?,?,?,?)");
+        $sentencia->execute(array($nombre,$descripcion,$precio,$id_categoria,basename($filepath)));
         header("Location: ".BASE_URL."administracion");
     }
+
+    private function moveFile($imagen) {
+        $filepath = "./uploads/" . uniqid() . "." . strtolower(pathinfo($imagen['name'], PATHINFO_EXTENSION));  
+        move_uploaded_file($imagen['tmp_name'], $filepath);
+        return $filepath;
+    }
+
+
+
 
     //Funcion para eliminar un producto
     //COMPROBAR QUE ESTE LOGGED

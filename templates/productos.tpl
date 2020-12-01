@@ -14,13 +14,8 @@
                                     {if $producto->imagen}
                                         <img src="./uploads/{$producto->imagen}" class="img-prod">
                                     {/if}
-                                    <button name = "{$index}" class = "btnShowMore more"   ></button>
+                                    <a class="botonDetalles" href="productos/{$producto->id_producto}">Detalles</a>
                                 </div>
-                                <div id = "div{$index}" class = "hidden productDetail" >
-                                    <p>Descripcion: {$producto->descripcion}</p>
-                                    <p>Precio: ${$producto->precio}</p>
-                                </div>
-                                {assign "index" $index+1}
                             </div>
                         {/foreach}
                 </article>

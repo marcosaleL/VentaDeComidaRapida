@@ -47,19 +47,22 @@
             $this->modelCat->deleteCategoria($_GET['nameRemoveCategory']);
         }
 
-        //Fijarse que ande bien lo de la imagen
-        function addProduct(){
-            //ESTO NO LO ESTA HACIENDO BIEN (ES LO UNICO QUE FALTA DE IMAGEN)
-            $destino = null;
-            if(isset($_FILES['img'])){
-                $uploads = getcwd() . "/uploads/";
-                $destino = tempnam($uploads, $_FILES['img']['name']);
-                move_uploaded_file($_FILES['img']['tmp_name'],$destino);
-                $destino = basename($destino);
+        public function addProduct() {
+            if ($_FILES['imagen']['name']) {
+                if ($_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/png") {
+                    $id = $this->modelCat->getCategoriaByName($_POST['categoryAddProduct']);
+                    $this->modelProd->insertarProducto($_POST['nameAddProduct'],$_POST['descriptionAddProduct'],$_POST['precioAddProduct'], $id->id_categoria ,$_FILES['imagen']);
+                }
             }
-            $id = $this->modelCat->getCategoriaByName($_POST['categoryAddProduct']);
-            $this->modelProd->insertarProducto($_POST['nameAddProduct'],$_POST['descriptionAddProduct'],$_POST['precioAddProduct'], $id->id_categoria ,$destino);   
-        }
+            else {
+                $id = $this->modelCat->getCategoriaByName($_POST['categoryAddProduct']);
+                $this->modelProd->insertarProducto($_POST['nameAddProduct'],$_POST['descriptionAddProduct'],$_POST['precioAddProduct'], $id->id_categoria ,$_FILES['imagen']);  
+            }
+        }   
+
+
+
+
 
         //Fijarse que ande bien lo de la imagen
         function updateProduct(){

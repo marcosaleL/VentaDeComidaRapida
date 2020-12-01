@@ -6,6 +6,7 @@
     <base href="{BASE_URL}">
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
     <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>{$titulo}</title>
 </head>
 <body>
@@ -18,8 +19,8 @@
                     <li><a class="button" href="productos">Productos</a></li>
                     <li><a class="button" href="categorias">Categorias</a></li>
                     <li><a class="button" href="login">Sign In</a></li>
-                    <li><a class="button" href="registro">Sign Up</a></li>
-                    <li><a class="button" href="logout">Sign Out</a></li>
+                    <li><a class="button" href="registro">Registrarse</a></li>
+                    <li><a class="button" href="">Sign Out</a></li>
                     <li><a class="button" href="administracion">Administrador</a></li>
                 </ul>
             </nav>

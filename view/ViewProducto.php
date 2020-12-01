@@ -42,7 +42,7 @@ class ViewProductos{
         $smarty->assign('titulo', "El producto no existe");
         $smarty->assign('nombre', "producto");
         $smarty->assign('id', $id);
-        $smarty->display('./templates./noExiste.tpl'); 
+        $smarty->display('./templates/noExiste.tpl'); 
     }
 
    // function ShowHomeLocation(){

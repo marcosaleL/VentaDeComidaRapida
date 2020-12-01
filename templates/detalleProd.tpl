@@ -4,7 +4,7 @@
             <h1 class="titulo">{$titulo}</h1>
             <section class="sectionPagina2" >
                 <article class="articleListProduct">  
-                    <div class = "productoContainer">
+                    <div class="contenedorProducto">
                         <div class = "divNameAndButton">
                             <h3 class="listado">{$producto->nombre}</h3>
                             {if $producto->imagen}
@@ -16,5 +16,9 @@
                     </div>    
                 </article>
             </section>
+            {include file="./vue/CommentSection.tpl"}
         </div>
+        
+        <script src="js/comments.js"></script>
+    
 {include file="./footer.tpl"}

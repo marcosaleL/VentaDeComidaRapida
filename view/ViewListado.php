@@ -31,8 +31,9 @@ class ViewListado{
         $smarty->assign('titulo', "La categoria no existe");
         $smarty->assign('nombre', "categoria");
         $smarty->assign('id', $id);
-        $smarty->display('./templates./noExiste.tpl'); 
+        $smarty->display('./templates/noExiste.tpl'); 
     }
+    
     
    // function ShowHomeLocation(){
    //     header("Location: ".BASE_URL."home");
