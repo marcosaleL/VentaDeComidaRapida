@@ -17,6 +17,10 @@
             $this->viewUser->showLogin();
         }
     
+        function registro(){
+            $this->viewUser->showRegistro();
+        }
+
         function logout(){
             session_start();
             session_destroy();

@@ -22,6 +22,9 @@
     $r->addRoute("categorias/:ID", "GET", "ControllerListado", "getAndShowCategoria");
     $r->addRoute("administracion", "GET", "ControllerAdmin", "GetAndShowAdministratorPage");
     $r->addRoute("login", "GET", "ControllerAdmin", "GetAndShowAdministratorPage");
+
+    //Registro
+    $r->addRoute("registro","GET","ControllerUser","registro");
     
     //Usuario
     $r->addRoute("login", "POST", "ControllerUser", "login");

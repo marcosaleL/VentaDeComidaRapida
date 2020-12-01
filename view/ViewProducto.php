@@ -9,6 +9,7 @@ class ViewProductos{
     function __construct(){
         $this->title = "Nuestros productos";
     }
+
     function showHome($productos){
         if ($productos != null){
             $smarty = new Smarty();
