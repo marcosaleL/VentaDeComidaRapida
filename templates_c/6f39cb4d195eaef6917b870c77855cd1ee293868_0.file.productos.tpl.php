@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-28 15:01:35
+/* Smarty version 3.1.34-dev-7, created on 2020-12-01 20:13:29
   from 'C:\xampp\htdocs\TPEWeb2\templates\productos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc2583fe406d9_77269907',
+  'unifunc' => 'content_5fc695d9e3bf42_39625711',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6f39cb4d195eaef6917b870c77855cd1ee293868' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPEWeb2\\templates\\productos.tpl',
-      1 => 1606572095,
+      1 => 1606848568,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc2583fe406d9_77269907 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc695d9e3bf42_39625711 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <!-- ESTE TEMPLATE  MUESTRA UN LISTADO DE CATEOGRIAS -->
@@ -48,17 +48,9 @@ $_smarty_tpl->tpl_vars['producto']->do_else = false;
                                         <img src="./uploads/<?php echo $_smarty_tpl->tpl_vars['producto']->value->imagen;?>
 " class="img-prod">
                                     <?php }?>
-                                    <button name = "<?php echo $_smarty_tpl->tpl_vars['index']->value;?>
-" class = "btnShowMore more"   ></button>
+                                    <a class="botonDetalles" href="productos/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id_producto;?>
+">Detalles</a>
                                 </div>
-                                <div id = "div<?php echo $_smarty_tpl->tpl_vars['index']->value;?>
-" class = "hidden productDetail" >
-                                    <p>Descripcion: <?php echo $_smarty_tpl->tpl_vars['producto']->value->descripcion;?>
-</p>
-                                    <p>Precio: $<?php echo $_smarty_tpl->tpl_vars['producto']->value->precio;?>
-</p>
-                                </div>
-                                <?php $_smarty_tpl->_assignInScope('index', $_smarty_tpl->tpl_vars['index']->value+1);?>
                             </div>
                         <?php
 }

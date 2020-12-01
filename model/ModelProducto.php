@@ -5,7 +5,7 @@ class ModelProductos{
     private $db;
 
     function __construct(){
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=VentaComidaRapida;charset=utf8', 'root', '');
+        $this->db = new PDO('mysql:host=localhost;'.'dbname=ventacomidarapida;charset=utf8', 'root', '');
     }
     
     //Funcion para obtener un arreglo de productos
