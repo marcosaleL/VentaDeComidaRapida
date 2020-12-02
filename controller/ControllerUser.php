@@ -16,26 +16,27 @@
             $this->helper = new Helper();
         }
 
-        function rol($logged){
+        function login(){
+            $logged = $this->helper->checkLoggedIn();
+            $role = 0;
             if ($logged){
                 $usuarioDB = $this->modelUser->getUser($_SESSION["DIRECCION"]);
                 $_SESSION["DIRECCION"] = $usuarioDB->direccion;
                 $_SESSION['LAST_ACTIVITY'] = time(); 
-                return $usuarioDB->admin;
-            }else{ 
-                return 0;
-            } 
-        }
-
-        function login(){
-            $logged = $this->helper->checkLoggedIn();
-            $role = rol($logged);
+                $role = $usuarioDB->admin;
+            }  
             $this->viewUser->showLogin("",$logged,$role);
         }
     
         function registro(){
             $logged = $this->helper->checkLoggedIn();
-            $role = rol($logged);
+            $role = 0;
+            if ($logged){
+                $usuarioDB = $this->modelUser->getUser($_SESSION["DIRECCION"]);
+                $_SESSION["DIRECCION"] = $usuarioDB->direccion;
+                $_SESSION['LAST_ACTIVITY'] = time(); 
+                $role = $usuarioDB->admin;
+            }  
             $this->viewUser->showRegistro($logged,$role);
         }
 
