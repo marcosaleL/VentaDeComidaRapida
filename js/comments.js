@@ -1,44 +1,13 @@
 "use strict"
-/*
 
-//document.addEventListener("DOMContentLoaded", fetchComments(buttonThing));
+document.getElementById("commentButton").addEventListener('click', (event) => {
+    postComment(event);
+});
 
-
-let app = new Vue(
-    {
-        el: '#commentSection',
-        data:
-        {
-            test: "Vue works",
-            comments: [],
-            commentexists: true,
-            superUser: true,
-        },
-        methods: {
-            fetchDeleteComment: async function (commentId) {
-                const res = await fetch("api/comment/" + commentId, {
-                    method: "DELETE",
-                });
-                if (200 < res.status && res.status < 300) { fetchComments(); } else
-                    if (res.value = 401) {
-                        const arrUrl = window.location.href.split('/');
-                        arrUrl.pop();
-                        arrUrl.pop();
-                        const baseUrl =arrUrl.join('/');
-                        window.location.href = baseUrl + "/login";
-                    } else {
-                        alert("no tienes permisos para lo que intentas hacer")
-                    }
-
-
-            }
-        }
-    }
-);
-
-*/
-
-document.getElementById("commentButton").addEventListener("submit", postComment);
+let buttonsDel = document.querySelectorAll(".deleteComment");
+buttonsDel.forEach(boton => {
+    boton.addEventListener('click', fetchDeleteComment(boton.id))
+});
 
 let app = new Vue({
     el: "#commentSection",
@@ -47,6 +16,26 @@ let app = new Vue({
         comments: [], 
         commentexists: true,
         auth: true
+    },
+    methods: {
+        fetchDeleteComment: async function (id_producto) {
+            const res = await fetch("api/delComment/" + id_producto, {
+                method: "DELETE",
+            });
+            if (200 < res.status && res.status < 300) { 
+                fetchComments(); 
+            }else
+                if (res.value = 401) {
+                    //MANDARLO AL LOGIN (NO SE SI DE ESTA FORMA)
+                    const arrUrl = window.location.href.split('/');
+                    arrUrl.pop();
+                    arrUrl.pop();
+                    const baseUrl =arrUrl.join('/');
+                    window.location.href = baseUrl + "/login";
+                } else {
+                    alert("no tienes permisos para lo que intentas hacer");
+                }
+        }
     }
 });
 
@@ -57,7 +46,14 @@ function getComments(){
     fetch("api/comments/" + id)
     .then(response => response.json())
     .then(comments => {
-        app.comments = comments;
+        if(comments.length != 0){
+            app.comments = comments;
+            app.commentexists = true;
+        }
+        else{
+            app.comments = [];
+            app.commentexists = false;
+        }
     })
     .catch(error => console.log(error));
 }
@@ -66,18 +62,13 @@ function getProductId() {
     let params = window.location.href.split("/");
     return params[parseInt(params.length) - 1];
 }
-
 getComments();
-
 
 function postComment(event) {
     event.preventDefault();
-    //let texto = document.getElementById("commentTexto").value;
-    let texto = $_POST['commentTexto'];
-    //let valoracion = document.getElementById("valoracion").value;4
-    let valoracion = $_POST['valoracion'];
+    let texto = document.getElementById("commentTexto").value;
+    let valoracion = document.getElementById("valoracion").value;
     let id_producto = getProductId();
-    console.log("asdjaskdashkjd");
     fetchPostComment(texto, valoracion, id_producto);
     document.getElementById("commentTexto").value = "";
     document.getElementById("valoracion").value = 5;
@@ -100,6 +91,7 @@ async function fetchPostComment(texto, valoracion, id_producto) {
         fetchComments();
     } else {
         if (res.status == 401) {
+            //MANDARLO AL LOGIN (NO DE ESTA FORMA)
             const baseUrl = "http://localhost/VentaDeComidaRapida"; //hay que dinamizar esto
             window.location.href = baseUrl + "/login";
         }
@@ -113,25 +105,30 @@ async function fetchComments() {
         const comments = await res.json();
         app.comments = comments;
         app.commentexists = true;
-    } else { app.commentexists = false; }
-}
-
-
-
-/*
-
-if (document.getElementById("admin-deck")) {
-    app.superUser = true;
-}
-
-function buttonThing() {
-    let deleteButtons = document.getElementsByClassName("deleteComment");
-    if (deleteButtons.length > 0) {
-        deleteButtons.forEach(button => {
-            button.addEventListener("click", fetchDeleteComment(this.dataset.id));
-            console.log("llegaste, varias veces");
-            console.log(button.dataset.id);
-        });
+    } else {
+        app.comments = [];
+        app.commentexists = false; 
     }
+}
+
+ /*
+async function fetchDeleteComment(commentId){
+    res = await fetch("api/delComment/" + commentId, {
+        method: "DELETE"
+    });
+    fetchComments();
+   
+    if (200 < res.status && res.status < 300) { fetchComments(); } else
+        if (res.value = 401) {
+            const arrUrl = window.location.href.split('/');
+            arrUrl.pop();
+            arrUrl.pop();
+            const baseUrl =arrUrl.join('/');
+            window.location.href = baseUrl + "/login";
+        } else {
+            alert("no tienes permisos para lo que intentas hacer")
+        }
+    
+
 }
 */

@@ -18,7 +18,5 @@
             </section>
             {include file="./vue/CommentSection.tpl"}
         </div>
-        
         <script src="js/comments.js"></script>
-    
 {include file="./footer.tpl"}

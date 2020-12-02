@@ -8,14 +8,6 @@ class ControllerApiComments extends ApiController {
 
     private $helper;
   
-    /*
-    function __construct() {
-        parent::__construct();
-        $this->model = new ModelComment();
-        $this->view = new ViewApi();
-    }
-*/
-
     public function getComments($params = null){
         $id_producto = $params[':ID'];
         $comments = $this->model->getCommentsbyId($id_producto);
@@ -25,8 +17,6 @@ class ControllerApiComments extends ApiController {
             $this->view->response('No se han encontrado comentarios para este producto.', 404);
         }
     }
-
-
 
     function deleteComment($params = null){
         $id_comment = $params[':ID'];

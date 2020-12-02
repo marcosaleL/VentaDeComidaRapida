@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-12-02 01:51:26
+/* Smarty version 3.1.34-dev-7, created on 2020-12-02 19:55:04
   from '/opt/lampp/htdocs/VentaDeComidaRapida/templates/adminPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc6e50e77cf15_49222673',
+  'unifunc' => 'content_5fc7e30826c720_48835927',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8c1e5b89656d8d17bd4ddb3cd59788c09ab74e72' => 
     array (
       0 => '/opt/lampp/htdocs/VentaDeComidaRapida/templates/adminPage.tpl',
-      1 => 1606864592,
+      1 => 1606932823,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc6e50e77cf15_49222673 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc7e30826c720_48835927 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    
     <?php $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -115,9 +115,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <input type="submit" value="Delete">
                 </form>
             </article>
+            <!---
             <form action="logout" method="GET">
                 <input type="submit" value="Logout">
             </form>
+            ---->
             
         </section>
     </div>
