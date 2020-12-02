@@ -25,7 +25,7 @@ let app = new Vue({
                 method: "DELETE",
             });
             if (200 <= res.status && res.status < 300) { 
-                fetchComments(); 
+                getComments(); 
             }else
                 if (res.value = 401) {
                     //MANDARLO AL LOGIN (NO SE SI DE ESTA FORMA)
