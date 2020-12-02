@@ -24,7 +24,9 @@
                     {/if}
                     {if $logged} <!--Si no esta logueado no muestro estos dos botones-->
                         <li><a class="button" href="logout">Sign Out</a></li>
-                        <li><a class="button" href="administracion">Administrador</a></li>
+                        {if $role == 1}
+                            <li><a class="button" href="administracion">Administrador</a></li>
+                        {/if}
                     {/if}
                 </ul>
             </nav>

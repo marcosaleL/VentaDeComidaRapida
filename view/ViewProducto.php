@@ -10,41 +10,45 @@ class ViewProductos{
         $this->title = "Nuestros productos";
     }
 
-    function showHome($productos,$logged){
+    function showHome($productos,$logged,$role){
         if ($productos != null){
             $smarty = new Smarty();
             $smarty->assign('titulo', $this->title);
             $smarty->assign('logged',$logged);
+            $smarty->assign('role',$role);
             $smarty->assign('productos', $productos);
             $smarty->assign('currentCategory', "");
             $smarty->display('./templates/home.tpl'); // muestro el template
         }
     }
 
-    function showListadoProductos($productos,$logged){
+    function showListadoProductos($productos,$logged,$role){
         if ($productos != null){
             $smarty = new Smarty();
             $index = 0;
             $smarty->assign('titulo', $this->title);
             $smarty->assign('logged',$logged);
+            $smarty->assign('role',$role);
             $smarty->assign('productos', $productos);
             $smarty->assign('index', $index);
             $smarty->display('./templates/productos.tpl'); // muestro el template
         }
     }
 
-    function showProducto($producto,$logged){
+    function showProducto($producto,$logged,$role){
         $smarty = new Smarty();
         $smarty->assign('titulo', "Detalles del producto");
         $smarty->assign('logged',$logged);
+        $smarty->assign('role',$role);
         $smarty->assign('producto', $producto);
         $smarty->display('./templates/detalleProd.tpl');
     }
     
-    function showNoExiste($id,$logged){
+    function showNoExiste($id,$logged,$role){
         $smarty = new Smarty();
         $smarty->assign('titulo', "El producto no existe");
         $smarty->assign('logged',$logged);
+        $smarty->assign('role',$role);
         $smarty->assign('nombre', "producto");
         $smarty->assign('id', $id);
         $smarty->display('./templates/noExiste.tpl'); 

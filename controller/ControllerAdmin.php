@@ -1,6 +1,7 @@
 <?php
 
     require_once "./model/ModelProducto.php";
+    require_once "./model/ModelUser.php";
     require_once "./model/ModelCategoria.php";
     require_once "./view/ViewAdmin.php";
     require_once "./view/ViewUser.php";
@@ -28,6 +29,7 @@
         //Funcion que obtiene desde el Model los Productos y se los manda al view para mostrarlos
         function GetAndShowAdministratorPage(){
             $logged = $this->helper->checkLoggedIn();
+            $role = 0;
             if ($logged){
                 $usuarioDB = $this->modelUser->getUser($_SESSION["DIRECCION"]);
                 if(!isset($_SESSION)){
@@ -35,15 +37,16 @@
                 }
                 $_SESSION["DIRECCION"] = $usuarioDB->direccion;
                 $_SESSION['LAST_ACTIVITY'] = time(); 
-                if($usuarioDB->admin == 1){
+                $role = $usuarioDB->admin;
+                if($admin == 1){
                     $productos = $this->modelProd->getProductos();
                     $categorias = $this->modelCat->getCategorias(); 
-                    $this->viewAdmin->ShowAdministratorPage($productos, $categorias,$logged);
+                    $this->viewAdmin->ShowAdministratorPage($productos, $categorias,$logged,$role);
                 }else{
                     header("Location: ".BASE_URL."home");
                 } 
             }else{
-                $this->viewUser->showLogin("",$logged);
+                $this->viewUser->showLogin("",$logged,$role);
             }
         }   
 

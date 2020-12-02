@@ -16,14 +16,27 @@
             $this->helper = new Helper();
         }
 
+        function rol($logged){
+            if ($logged){
+                $usuarioDB = $this->modelUser->getUser($_SESSION["DIRECCION"]);
+                $_SESSION["DIRECCION"] = $usuarioDB->direccion;
+                $_SESSION['LAST_ACTIVITY'] = time(); 
+                return $usuarioDB->admin;
+            }else{ 
+                return 0;
+            } 
+        }
+
         function login(){
             $logged = $this->helper->checkLoggedIn();
-            $this->viewUser->showLogin("",$logged);
+            $role = rol($logged);
+            $this->viewUser->showLogin("",$logged,$role);
         }
     
         function registro(){
             $logged = $this->helper->checkLoggedIn();
-            $this->viewUser->showRegistro($logged);
+            $role = rol($logged);
+            $this->viewUser->showRegistro($logged,$role);
         }
 
         function logout(){
@@ -40,6 +53,7 @@
             if(isset($user)){
                 $usuarioDB = $this->modelUser->getUser($user);
                 $logged = $this->helper->checkLoggedIn();
+                $role = rol($logged);
                 if(isset($usuarioDB) && $usuarioDB){
                     if (password_verify($pass, $usuarioDB->password)){
                         session_start();
@@ -47,10 +61,10 @@
                         $_SESSION['LAST_ACTIVITY'] = time();
                         header("Location: ".BASE_URL."administracion");
                     }else{
-                        $this->viewUser->showLogin("Contraseña incorrecta",$logged);
+                        $this->viewUser->showLogin("Contraseña incorrecta",$logged,$role);
                     }
                 }else{
-                    $this->viewUser->showLogin("El usuario no existe",$logged);
+                    $this->viewUser->showLogin("El usuario no existe",$logged,$role);
                 }
             }
         }
