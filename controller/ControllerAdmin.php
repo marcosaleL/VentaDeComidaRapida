@@ -97,6 +97,11 @@
             $user = $_GET["usuariosSinPermisos"];
             $this->modelUser->updateUser(1,$user);
         }
+
+        function eliminarUsuario(){
+            $user = $_GET["borrarUsuario"];
+            $this->modelUser->deleteUser($user);
+        }
     }
 
 ?>

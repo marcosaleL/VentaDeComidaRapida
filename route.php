@@ -30,6 +30,7 @@
     //Permisos de usuarios
     $r->addRoute("usuariosAdmin","GET","ControllerAdmin","quitarPermisos");
     $r->addRoute("usuariosNoAdmin","GET","ControllerAdmin","darPermisos");
+    $r->addRoute("eliminarUsuario","GET","ControllerAdmin","eliminarUsuario");
     
     //Usuario
     $r->addRoute("login", "POST", "ControllerUser", "login");
