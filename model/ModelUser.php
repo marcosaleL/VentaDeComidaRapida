@@ -28,7 +28,8 @@ class ModelUser{
     }
      
     function updateUser($role,$user){
-        $sentencia = $this->db->prepare("UPDATE `usuario` SET admin=? WHERE nombre=?");
+        //die($role);
+        $sentencia = $this->db->prepare('UPDATE Usuario SET admin=? WHERE nombre = ?');
         $sentencia->execute(array($role,$user));
         header("Location: ".BASE_URL."administracion");
     }
