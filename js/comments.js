@@ -4,12 +4,6 @@ document.getElementById("commentButton").addEventListener('click', (event) => {
     postComment(event);
 });
 
-/*
-let buttonsDel = document.querySelectorAll(".deleteComment");
-buttonsDel.forEach(boton => {
-    boton.addEventListener('click', fetchDeleteComment(boton.id))
-});
-*/
 
 let app = new Vue({
     el: "#commentSection",
@@ -17,7 +11,7 @@ let app = new Vue({
         subtitle: "Subtitle, no se ni lo que es",
         comments: [], 
         commentexists: true,
-        auth: true
+        admin: true
     },
     methods: {
         fetchDeleteComment: async function (id_producto) {

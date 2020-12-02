@@ -86,6 +86,7 @@
             $this->modelProd->deleteProducto($_GET['nameRemoveProduct']);
         }
 
+<<<<<<< HEAD
         function permisosUsuarios(){
             $role = 0;
             if(isset($_GET["usuariosConPermisos"])){
@@ -96,8 +97,24 @@
                 if(isset($_GET["usuariosSinPermisos"])){
                     $user = $_GET["usuariosSinPermisos"];
                 }
+=======
+        //USUARIO NO ADMIN
+        function quitarPermisos(){
+            if(isset($_POST["usuariosConPermisos"])){
+                $user = $_POST["usuariosConPermisos"];
+                $this->modelUser->updateUser(0,$user);
             }
-            $this->modelUser->updateUser($role,$user);
+            
+        }
+
+        //USUARIO NO ADMIN
+        function darPermisos(){
+            $role = 1;
+            if(isset($_POST["usuariosSinPermisos"])){
+                 $user = $_POST["usuariosSinPermisos"];
+                 $this->modelUser->updateUser(1,$user);
+>>>>>>> c722a2024643731aa3027804f6b0ca475f3d8234
+            }
         }
     }
 
