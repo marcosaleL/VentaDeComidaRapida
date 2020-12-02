@@ -10,7 +10,8 @@
                 </p>
                 <ul>
                     {foreach from=$categorias item=categoria}
-                        <li><h2 class="listado">{$categoria->nombre}</h2></li>
+                        <li><h3 class="listado">{$categoria->nombre}</h3></li>
+                        <a class="botonDetalles" href="categorias/{$categoria->id_categoria}">Detalles</a>
                     {/foreach}
                 </ul>
                 <br>
