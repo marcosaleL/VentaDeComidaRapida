@@ -40,8 +40,9 @@
                 $role = $usuarioDB->admin;
                 if($role == 1){
                     $productos = $this->modelProd->getProductos();
-                    $categorias = $this->modelCat->getCategorias(); 
-                    $this->viewAdmin->ShowAdministratorPage($productos, $categorias,$logged,$role);
+                    $categorias = $this->modelCat->getCategorias();
+                    $usuarios = $this->modelUser->getUsuarios(); 
+                    $this->viewAdmin->ShowAdministratorPage($productos, $categorias,$logged,$role,$usuarios);
                 }else{
                     header("Location: ".BASE_URL."home");
                 } 
@@ -83,6 +84,20 @@
 
         function removeProduct(){
             $this->modelProd->deleteProducto($_GET['nameRemoveProduct']);
+        }
+
+        function permisosUsuarios(){
+            $role = 0;
+            if(isset($_POST["usuariosConPermisos"])){
+                $user = $_POST["usuariosConPermisos"];
+                $role = 1;
+            }
+            else{
+                if(isset($_POST["usuariosSinPermisos"])){
+                    $user = $_POST["usuariosSinPermisos"];
+                }
+            }
+            $this->modelUser->updateUser($role,$user);
         }
     }
 

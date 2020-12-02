@@ -4,7 +4,7 @@
     <div class ="mainDivPagina2">
         <h1 class="titulo">{$titulo}</h1>
         <section class="sectionAdministrator">
-            
+        
             <article class = "articleABSCategoria">  
                 <form action="addCategory" method="POST">
                     <h3>Agregar Categoria</h3>
@@ -30,7 +30,6 @@
                     <input type="text" name="nameRemoveCategory" id="" placeholder="Nombre" required>
                     <input type="submit" value="Delete">
                 </form>
-
             </article>
 
             <article class = "articleABSProductos"> 
@@ -73,11 +72,37 @@
                     <input type="submit" value="Delete">
                 </form>
             </article>
-            <!---
-            <form action="logout" method="GET">
-                <input type="submit" value="Logout">
-            </form>
-            ---->
+
+            <article class = "articleABSCategoria">
+                <h3>Cambiar privilegios a los usuarios</h3>  
+                <form action="usuariosAdmin" method="POST" enctype="multipart/form-data">
+                    <label for="">Usuarios con permisos de administracion:  </label>
+                    <select name="usuariosConPermisos" id="" value="Usuarios">
+                        {foreach from=$usuarios item=usuario}
+                            {if $usuario->admin == 1}
+                                <option>{$usuario->nombre}</option>
+                            {/if}
+                        {/foreach}
+                    </select>
+                    <input type="submit" value="Quitar permisos">
+                </form>
+                <form action="usuariosNoAdmin" method="POST" enctype="multipart/form-data">
+                    {foreach from=$usuarios item=usuario}
+                        {if $usuario->admin == 0}
+                            <label for="">Usuarios sin permisos de administracion:  </label>
+                            <select name="usuariosSinPermisos" id="" value="Usuarios">
+                                {foreach from=$usuarios item=usuario}
+                                    {if $usuario->admin == 0}
+                                        <option>{$usuario->nombre}</option>
+                                    {/if}
+                                {/foreach}
+                            </select>
+                            <input type="submit" value="Añadir permisos">    
+                        {/if}
+                    {/foreach} 
+                </form>
+            </article>
+
             
         </section>
     </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-12-02 14:08:24
+/* Smarty version 3.1.34-dev-7, created on 2020-12-02 22:22:46
   from 'C:\xampp\htdocs\TPEWeb2\templates\adminPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc791c8a1f417_32551212',
+  'unifunc' => 'content_5fc805a6e76642_57145351',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3790362dd1531e7480fdf465b391dc4b0ff24454' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPEWeb2\\templates\\adminPage.tpl',
-      1 => 1606914501,
+      1 => 1606944054,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc791c8a1f417_32551212 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc805a6e76642_57145351 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    
     <?php $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -31,7 +31,7 @@ function content_5fc791c8a1f417_32551212 (Smarty_Internal_Template $_smarty_tpl)
         <h1 class="titulo"><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </h1>
         <section class="sectionAdministrator">
-            
+        
             <article class = "articleABSCategoria">  
                 <form action="addCategory" method="POST">
                     <h3>Agregar Categoria</h3>
@@ -57,7 +57,6 @@ function content_5fc791c8a1f417_32551212 (Smarty_Internal_Template $_smarty_tpl)
                     <input type="text" name="nameRemoveCategory" id="" placeholder="Nombre" required>
                     <input type="submit" value="Delete">
                 </form>
-
             </article>
 
             <article class = "articleABSProductos"> 
@@ -115,11 +114,60 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <input type="submit" value="Delete">
                 </form>
             </article>
-            <!---
-            <form action="logout" method="GET">
-                <input type="submit" value="Logout">
-            </form>
-            ---->
+
+            <article class = "articleABSCategoria">
+                <h3>Cambiar privilegios a los usuarios</h3>  
+                <form action="usuariosAdmin" method="POST" enctype="multipart/form-data">
+                    <label for="">Usuarios con permisos de administracion:  </label>
+                    <select name="usuariosConPermisos" id="" value="Usuarios">
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['usuarios']->value, 'usuario');
+$_smarty_tpl->tpl_vars['usuario']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['usuario']->value) {
+$_smarty_tpl->tpl_vars['usuario']->do_else = false;
+?>
+                            <?php if ($_smarty_tpl->tpl_vars['usuario']->value->admin == 1) {?>
+                                <option><?php echo $_smarty_tpl->tpl_vars['usuario']->value->nombre;?>
+</option>
+                            <?php }?>
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                    </select>
+                    <input type="submit" value="Quitar permisos">
+                </form>
+                <form action="usuariosNoAdmin" method="POST" enctype="multipart/form-data">
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['usuarios']->value, 'usuario');
+$_smarty_tpl->tpl_vars['usuario']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['usuario']->value) {
+$_smarty_tpl->tpl_vars['usuario']->do_else = false;
+?>
+                        <?php if ($_smarty_tpl->tpl_vars['usuario']->value->admin == 0) {?>
+                            <label for="">Usuarios sin permisos de administracion:  </label>
+                            <select name="usuariosSinPermisos" id="" value="Usuarios">
+                                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['usuarios']->value, 'usuario');
+$_smarty_tpl->tpl_vars['usuario']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['usuario']->value) {
+$_smarty_tpl->tpl_vars['usuario']->do_else = false;
+?>
+                                    <?php if ($_smarty_tpl->tpl_vars['usuario']->value->admin == 0) {?>
+                                        <option><?php echo $_smarty_tpl->tpl_vars['usuario']->value->nombre;?>
+</option>
+                                    <?php }?>
+                                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                            </select>
+                            <input type="submit" value="Añadir permisos">    
+                        <?php }?>
+                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?> 
+                </form>
+            </article>
+
             
         </section>
     </div>

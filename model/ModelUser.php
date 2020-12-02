@@ -19,7 +19,19 @@ class ModelUser{
         $sentencia->execute(array($name,$lastName,$mail,$phone,$hash,$admin));
         header("Location: ".BASE_URL."home");
     }
-      
+
+    function getUsuarios(){
+        $sentencia = $this->db->prepare("SELECT * FROM Usuario");
+        $sentencia->execute();
+        $usuarios = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $usuarios;
+    }
+     
+    function updateUser($role,$user){
+        $sentencia = $this->db->prepare('UPDATE Usuario SET admin=? WHERE nombre = ?');
+        $sentencia->execute(array($role,$user));
+        header("Location: ".BASE_URL."administracion");
+    }
 }
 
 

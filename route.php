@@ -26,6 +26,10 @@
     //Registro
     $r->addRoute("registro","GET","ControllerUser","registro");
     $r->addRoute("register","POST","ControllerUser","registerUser");
+
+    //Permisos de usuarios
+    $r->addRoute("usuariosAdmin","POST","ControllerAdmin","permisosUsuarios");
+    $r->addRoute("usuariosNoAdmin","POST","ControllerAdmin","permisosUsuarios");
     
     //Usuario
     $r->addRoute("login", "POST", "ControllerUser", "login");
