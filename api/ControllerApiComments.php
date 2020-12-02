@@ -20,12 +20,21 @@ class ControllerApiComments extends ApiController {
 
     function deleteComment($params = null){
         $id_comment = $params[':ID'];
-        $result = $this->model->deleteComment($id_comment);
-        if ($result > 0) {
-            $this->view->response('El comentario ha sido eliminado correctamente.', 202);
-        } else {
-            $this->view->response('No se ha podido eliminar ese comentario', 404);
+        $logged = $this->helper->checkLoggedIn();
+        $role = 0;
+        if ($logged){
+            if(!$role){
+                $result = $this->model->deleteComment($id_comment);
+                if ($result > 0) {
+                   $this->view->response('El comentario ha sido eliminado correctamente.', 202);
+                } else {
+                   $this->view->response('No se ha podido eliminar ese comentario', 404);
+                }
+            }else{
+
+            }
         }
+            
     }
 
     function addComment(){
