@@ -14,10 +14,12 @@
         private $helper;
         private $viewUser;
         private $logged = false;
+        private $modelUser;
 
         function __construct(){
             $this->modelProd = new ModelProductos();
             $this->modelCat = new ModelCategoria();
+            $this->modelUser = new ModelUser();
             $this->viewAdmin = new ViewAdmin();
             $this->viewUser = new ViewUser();
             $this->helper = new Helper();
@@ -27,9 +29,19 @@
         function GetAndShowAdministratorPage(){
             $logged = $this->helper->checkLoggedIn();
             if ($logged){
-                $productos = $this->modelProd->getProductos();
-                $categorias = $this->modelCat->getCategorias();  
-                $this->viewAdmin->ShowAdministratorPage($productos, $categorias); 
+                $usuarioDB = $this->modelUser->getUser($_SESSION["DIRECCION"]);
+                if(!isset($_SESSION)){
+                    session_start();
+                }
+                $_SESSION["DIRECCION"] = $usuarioDB->direccion;
+                $_SESSION['LAST_ACTIVITY'] = time(); 
+                if($usuarioDB->admin == 1){
+                    $productos = $this->modelProd->getProductos();
+                    $categorias = $this->modelCat->getCategorias(); 
+                    $this->viewAdmin->ShowAdministratorPage($productos, $categorias);
+                }else{
+                    header("Location: ".BASE_URL."home");
+                } 
             }else{
                 $this->viewUser->showLogin("");
             }
