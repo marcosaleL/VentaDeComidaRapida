@@ -2,27 +2,34 @@
 
     require_once "./model/ModelUser.php";
     require_once "./view/ViewUser.php";
+    require_once "./Helper.php";
 
     class ControllerUser{
 
         private $modelUser;
         private $viewUser;
+        private $helper;
 
         function __construct(){
             $this->modelUser = new ModelUser();
             $this->viewUser = new ViewUser();
+            $this->helper = new Helper();
         }
 
         function login(){
-            $this->viewUser->showLogin();
+            $logged = $this->helper->checkLoggedIn();
+            $this->viewUser->showLogin("",$logged);
         }
     
         function registro(){
-            $this->viewUser->showRegistro();
+            $logged = $this->helper->checkLoggedIn();
+            $this->viewUser->showRegistro($logged);
         }
 
         function logout(){
-            session_start();
+            if(!isset($_SESSION)){
+                session_start();
+            }
             session_destroy();
             header("Location: ". login);
         }
@@ -32,6 +39,7 @@
             $pass = $_POST["input_pass"];
             if(isset($user)){
                 $usuarioDB = $this->modelUser->getUser($user);
+                $logged = $this->helper->checkLoggedIn();
                 if(isset($usuarioDB) && $usuarioDB){
                     if (password_verify($pass, $usuarioDB->password)){
                         session_start();
@@ -39,10 +47,10 @@
                         $_SESSION['LAST_ACTIVITY'] = time();
                         header("Location: ".BASE_URL."administracion");
                     }else{
-                        $this->viewUser->showLogin("Contraseña incorrecta");
+                        $this->viewUser->showLogin("Contraseña incorrecta",$logged);
                     }
                 }else{
-                    $this->viewUser->showLogin("El usuario no existe");
+                    $this->viewUser->showLogin("El usuario no existe",$logged);
                 }
             }
         }

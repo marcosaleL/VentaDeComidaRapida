@@ -1,6 +1,7 @@
 <?php
 
 require_once "./libs/smarty/Smarty.class.php";
+require_once "./Helper.php";
 
 class ViewUser{
 
@@ -10,15 +11,17 @@ class ViewUser{
         $this->title = "Login";
     }
 
-    function showLogin($message = ""){
+    function showLogin($message = "",$logged){
         $smarty = new Smarty();
         $smarty->assign('titulo', $this->title);
+        $smarty->assign('logged',$logged);
         $smarty->assign('message', $message);
         $smarty->display('./templates/login.tpl'); // muestro el template 
     }
 
-    function showRegistro(){
+    function showRegistro($logged){
         $smarty = new Smarty();
+        $smarty->assign('logged',$logged);
         $smarty->assign('titulo', "Registrarse");
         $smarty->display('./templates/registro.tpl'); 
     }

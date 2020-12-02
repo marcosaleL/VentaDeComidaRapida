@@ -10,25 +10,28 @@ class ViewListado{
         $this->title = "Nuestro Productos";
     }
 
-    function showList($categorias){
+    function showList($categorias,$logged){
         //if ($productos != null && $categoria != null){
             $smarty = new Smarty();
             $smarty->assign('titulo', $this->title);
+            $smarty->assign('logged',$logged);
             $smarty->assign('categorias', $categorias);
             $smarty->display('./templates/categorias.tpl'); // muestro el template
         //}
     }
 
-    function showCategoria($categoria){
+    function showCategoria($categoria,$logged){
         $smarty = new Smarty();
         $smarty->assign('titulo', "Detalles de la categoria");
+        $smarty->assign('logged',$logged);
         $smarty->assign('categoria', $categoria);
         $smarty->display('./templates/detalleCat.tpl');       
     }
 
-    function showNoExiste($id){
+    function showNoExiste($id,$logged){
         $smarty = new Smarty();
         $smarty->assign('titulo', "La categoria no existe");
+        $smarty->assign('logged',$logged);
         $smarty->assign('nombre', "categoria");
         $smarty->assign('id', $id);
         $smarty->display('./templates/noExiste.tpl'); 

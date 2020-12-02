@@ -10,10 +10,11 @@ class ViewAdmin{
         $this->title = "Pagina del administrador";
     }
 
-    function ShowAdministratorPage($productos, $categorias){
+    function ShowAdministratorPage($productos, $categorias,$logged){
             $index = 0;
             $smarty = new Smarty();
             $smarty->assign('titulo', $this->title);
+            $smarty->assign('logged',$logged);
             $smarty->assign('productos', $productos);
             $smarty->assign('categorias', $categorias);
             $smarty->assign('index', $index);

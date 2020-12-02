@@ -38,12 +38,12 @@
                 if($usuarioDB->admin == 1){
                     $productos = $this->modelProd->getProductos();
                     $categorias = $this->modelCat->getCategorias(); 
-                    $this->viewAdmin->ShowAdministratorPage($productos, $categorias);
+                    $this->viewAdmin->ShowAdministratorPage($productos, $categorias,$logged);
                 }else{
                     header("Location: ".BASE_URL."home");
                 } 
             }else{
-                $this->viewUser->showLogin("");
+                $this->viewUser->showLogin("",$logged);
             }
         }   
 

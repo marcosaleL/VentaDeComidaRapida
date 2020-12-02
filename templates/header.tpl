@@ -18,10 +18,14 @@
                     <li><a class="button" href="home">Inicio</a></li>
                     <li><a class="button" href="productos">Productos</a></li>
                     <li><a class="button" href="categorias">Categorias</a></li>
-                    <li><a class="button" href="login">Sign In</a></li>
-                    <li><a class="button" href="registro">Sign Up</a></li>
-                    <li><a class="button" href="logout">Sign Out</a></li>
-                    <li><a class="button" href="administracion">Administrador</a></li>
+                    {if !$logged} <!--Si esta logueado no hace falta mostrar para que se registre ni para que inicie sesión-->
+                        <li><a class="button" href="registro">Sign Up</a></li>
+                        <li><a class="button" href="login">Sign In</a></li>
+                    {/if}
+                    {if $logged} <!--Si no esta logueado no muestro estos dos botones-->
+                        <li><a class="button" href="logout">Sign Out</a></li>
+                        <li><a class="button" href="administracion">Administrador</a></li>
+                    {/if}
                 </ul>
             </nav>
         </div>
