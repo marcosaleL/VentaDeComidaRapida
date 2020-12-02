@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-12-02 23:26:40
+/* Smarty version 3.1.34-dev-7, created on 2020-12-03 00:00:48
   from '/opt/lampp/htdocs/VentaDeComidaRapida/templates/adminPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc814a01fd623_64162292',
+  'unifunc' => 'content_5fc81ca0c41992_65716451',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8c1e5b89656d8d17bd4ddb3cd59788c09ab74e72' => 
     array (
       0 => '/opt/lampp/htdocs/VentaDeComidaRapida/templates/adminPage.tpl',
-      1 => 1606947970,
+      1 => 1606950004,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc814a01fd623_64162292 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc81ca0c41992_65716451 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    
     <?php $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -117,7 +117,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
             <article class = "articleABSCategoria">
                 <h3>Cambiar privilegios a los usuarios</h3>  
-                <form action="usuariosAdmin" method="POST">
+                <form action="usuariosAdmin" method="GET">
                     <label for="">Usuarios con permisos de administracion:  </label>
                     <select name="usuariosConPermisos" id="" value="">
                         <?php
@@ -137,7 +137,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </select>
                     <input type="submit" value="Quitar permisos">
                 </form>
-                <form action="usuariosNoAdmin" method="POST">
+                <form action="usuariosNoAdmin" method="GET">
                     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['usuarios']->value, 'usuario');
 $_smarty_tpl->tpl_vars['usuario']->do_else = true;

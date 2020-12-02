@@ -75,7 +75,7 @@
 
             <article class = "articleABSCategoria">
                 <h3>Cambiar privilegios a los usuarios</h3>  
-                <form action="usuariosAdmin" method="POST">
+                <form action="usuariosAdmin" method="GET">
                     <label for="">Usuarios con permisos de administracion:  </label>
                     <select name="usuariosConPermisos" id="" value="">
                         {foreach from=$usuarios item=usuario}
@@ -86,7 +86,7 @@
                     </select>
                     <input type="submit" value="Quitar permisos">
                 </form>
-                <form action="usuariosNoAdmin" method="POST">
+                <form action="usuariosNoAdmin" method="GET">
                     {foreach from=$usuarios item=usuario}
                         {if $usuario->admin == 0}
                             <label for="">Usuarios sin permisos de administracion:  </label>

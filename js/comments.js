@@ -11,7 +11,7 @@ let app = new Vue({
         subtitle: "Subtitle, no se ni lo que es",
         comments: [], 
         commentexists: true,
-        admin: true
+        admini: true
     },
     methods: {
         fetchDeleteComment: async function (id_producto) {
