@@ -19,17 +19,12 @@ class ControllerApiComments extends ApiController {
     public function getComments($params = null){
         $id_producto = $params[':ID'];
         $comments = $this->model->getCommentsbyId($id_producto);
-        $this->view->response($comments, 200);
-        /*
         if ($comments != null) {
             $this->view->response($comments, 200);
         } else {
-            $this->view->response('No se han encontrado comentarios para ese producto.', 404);
+            $this->view->response('No se han encontrado comentarios para este producto.', 404);
         }
-        */
     }
-
-
 
 
 
@@ -51,7 +46,7 @@ class ControllerApiComments extends ApiController {
                 $id_producto = $data->id_producto;
                 $helper = new Helper();
                 $helper->checkLoggedIn();
-                $id_usuario = $_SESSION['DIRECCION'];
+                $id_usuario = 1;//$_SESSION['DIRECCION'];
                 $added= $this->model->addComment($valoracion,$texto,$id_producto,$id_usuario);
                 if ($added) {
                     $this->view->response("Se ha agregado un nuevo comentario correctamente.", 201);
@@ -62,7 +57,6 @@ class ControllerApiComments extends ApiController {
                 $this->view->response("No se que iria acá", 409); 
             }
     }
-
 
 }
 

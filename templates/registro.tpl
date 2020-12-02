@@ -5,7 +5,7 @@
     <h1 class="titulo">{$titulo}</h1>
     <section class="sectionAdministrator">
         <article class = "articleABSCategoria">  
-            <form action="" method="POST">
+            <form class="formRegistro" action="" method="POST">
                 <h3>Registrarse</h3>
                 <label for="">Nombre:</label>
                 <input type="text" name="" id="" placeholder="Nombre" required>

@@ -9,7 +9,7 @@
     
     // arma la tabla de ruteo
     $r->addRoute('comments/:ID','GET','ControllerApiComments','getComments');
-    $r->addRoute('comment/:ID','DELETE','ControllerApiComments','DeleteComment');
+    $r->addRoute('delComment/:ID','DELETE','ControllerApiComments','DeleteComment');
     $r->addRoute('comment','POST','ControllerApiComments','addComment');
 
     // rutea

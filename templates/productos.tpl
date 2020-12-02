@@ -3,10 +3,10 @@
        <div class ="mainDivPagina2">
             <h1 class="titulo">{$titulo}</h1>
             <section class="sectionPagina2" >
-                <article class="articleListProduct">  
-                    <p class="texto">Hasta el momento solo disponemos de una unica sucursal. <br>
+                <p class="texto">Hasta el momento solo disponemos de una unica sucursal. <br>
                     En esta se pueden encontrar los siguientes tipos de productos:  <br>
-                    </p>
+                </p>
+                <article class="articleListProduct">  
                         {foreach from=$productos item=producto}
                             <div class = "productoContainer">
                                 <div class = "divNameAndButton">

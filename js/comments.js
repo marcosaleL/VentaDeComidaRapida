@@ -38,7 +38,7 @@ let app = new Vue(
 
 */
 
-document.getElementById("commentButton").addEventListener("click", postComment);
+document.getElementById("commentButton").addEventListener("submit", postComment);
 
 let app = new Vue({
     el: "#commentSection",
@@ -51,6 +51,7 @@ let app = new Vue({
 });
 
 
+
 function getComments(){
     let id = getProductId();
     fetch("api/comments/" + id)
@@ -61,12 +62,22 @@ function getComments(){
     .catch(error => console.log(error));
 }
 
+function getProductId() {
+    let params = window.location.href.split("/");
+    return params[parseInt(params.length) - 1];
+}
+
+getComments();
+
 
 function postComment(event) {
     event.preventDefault();
-    let texto = document.getElementById("commentTexto").value;
-    let valoracion = document.getElementById("valoracion").value;
+    //let texto = document.getElementById("commentTexto").value;
+    let texto = $_POST['commentTexto'];
+    //let valoracion = document.getElementById("valoracion").value;4
+    let valoracion = $_POST['valoracion'];
     let id_producto = getProductId();
+    console.log("asdjaskdashkjd");
     fetchPostComment(texto, valoracion, id_producto);
     document.getElementById("commentTexto").value = "";
     document.getElementById("valoracion").value = 5;
@@ -76,8 +87,8 @@ function postComment(event) {
 
 async function fetchPostComment(texto, valoracion, id_producto) {
     let commentData = {
-        texto: texto,
         valoracion: valoracion,
+        texto: texto,
         id_producto: id_producto,
     }
     const res = await fetch("api/comment", {
@@ -106,11 +117,6 @@ async function fetchComments() {
 }
 
 
-function getProductId() {
-    let params = window.location.href.split("/");
-    return params[parseInt(params.length) - 1];
-}
-
 
 /*
 
@@ -128,10 +134,4 @@ function buttonThing() {
         });
     }
 }
-
-
-
 */
-
-getComments();
-

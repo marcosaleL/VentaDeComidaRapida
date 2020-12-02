@@ -194,7 +194,7 @@ header nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 15%;
+    width: 100%;
 }
 
 .divNameAndButton button{
@@ -203,6 +203,10 @@ header nav{
     border: 2px solid black;
     border-radius: 5px;
     padding: 0;
+}
+
+.contenedorProducto .texto{
+    margin-top: 10px;
 }
 
 
@@ -256,6 +260,15 @@ header nav{
     flex-direction: column;
     align-items: center;
 }
+
+.articleListProduct{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
 
 /*-----------------------ADMIN CENTER----------------------*/
 
@@ -447,15 +460,33 @@ input[type=submit]:active {
 /*-----------------------SECCION COMENTARIOS---------------------*/
 
 .divComentarios{
-
+    width: 50%;
 }
 
 .listaComentarios{
-
+    padding: 0;
 }
 
-.liComentario{
+.spanNombre{
+    color: wheat;
+    text-decoration: underline;
+}
 
+
+.spanValor{
+    color: yellow;
+    text-decoration: none;
+}
+
+
+.liComentario{
+    font-size: 20px;
+    border-top: 2px solid black;
+    color: wheat;
+}
+
+.liComentario p{
+    font-size: 17px;
 }
 
 
