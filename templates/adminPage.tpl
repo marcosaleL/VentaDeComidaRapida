@@ -101,6 +101,15 @@
                         {/if}
                     {/foreach} 
                 </form>
+                <form action="eliminarUsuario" method="GET">
+                    <label for="">Usuarios ha eliminar:  </label>
+                    <select name="borrarUsuario" id="" value="">
+                        {foreach from=$usuarios item=usuario}
+                            <option value="{$usuario->id_usuario}">{$usuario->nombre}</option>
+                        {/foreach}
+                    </select>
+                    <input type="submit" value="Eliminar usuario">  
+                </form>
             </article>
 
             

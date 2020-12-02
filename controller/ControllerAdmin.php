@@ -88,18 +88,19 @@
 
         //USUARIO ADMIN
         function quitarPermisos(){
-            if(isset($_GET["usuariosConPermisos"])){
-                $user = $_GET["usuariosConPermisos"];
-            }
+            $user = $_GET["usuariosConPermisos"];
             $this->modelUser->updateUser(0,$user);
         }
 
         //USUARIO NO ADMIN
         function darPermisos(){
-            if(isset($_GET["usuariosSinPermisos"])){
-                 $user = $_GET["usuariosSinPermisos"];
-                 $this->modelUser->updateUser(1,$user);
-            }
+            $user = $_GET["usuariosSinPermisos"];
+            $this->modelUser->updateUser(1,$user);
+        }
+
+        function eliminarUsuario(){
+            $user = $_GET["borrarUsuario"];
+            $this->modelUser->deleteUser($user);
         }
     }
 
