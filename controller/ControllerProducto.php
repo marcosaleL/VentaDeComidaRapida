@@ -20,29 +20,30 @@
             $this->modelUser = new ModelUser();
         }
 
-        function rol($logged){
-            if ($logged){
-                $usuarioDB = $this->modelUser->getUser($_SESSION["DIRECCION"]);
-                $_SESSION["DIRECCION"] = $usuarioDB->direccion;
-                $_SESSION['LAST_ACTIVITY'] = time(); 
-                return $usuarioDB->admin;
-            }else{ 
-                return 0;
-            } 
-        }
-
         //Funcion que obtiene desde el Model los Productos y se los manda al view para mostrarlos
         function getAndShowHome(){
             $productos = $this->modelProd->getProductosWithCategory();
             $logged = $this->helper->checkLoggedIn();
-            $role = rol($logged);         
-            $this->viewProd->showHome($productos,$logged,$role;
+            $role = 0;
+            if ($logged){
+                $usuarioDB = $this->modelUser->getUser($_SESSION["DIRECCION"]);
+                $_SESSION["DIRECCION"] = $usuarioDB->direccion;
+                $_SESSION['LAST_ACTIVITY'] = time(); 
+                $role = $usuarioDB->admin;
+            }       
+            $this->viewProd->showHome($productos,$logged,$role);
         }  
 
         function getAndShowListadoProductos(){    
             $productos = $this->modelProd->getProductos();
             $logged = $this->helper->checkLoggedIn();
-            $role = rol($logged);      
+            $role = 0;
+            if ($logged){
+                $usuarioDB = $this->modelUser->getUser($_SESSION["DIRECCION"]);
+                $_SESSION["DIRECCION"] = $usuarioDB->direccion;
+                $_SESSION['LAST_ACTIVITY'] = time(); 
+                $role = $usuarioDB->admin;
+            }      
             $this->viewProd->showListadoProductos($productos,$logged,$role);
         } 
 
@@ -55,7 +56,13 @@
             $id = $params[':ID'];
             $producto = $this->modelProd->getProducto($id);
             $logged = $this->helper->checkLoggedIn();
-            $role = rol($logged);      
+            $role = 0;
+            if ($logged){
+                $usuarioDB = $this->modelUser->getUser($_SESSION["DIRECCION"]);
+                $_SESSION["DIRECCION"] = $usuarioDB->direccion;
+                $_SESSION['LAST_ACTIVITY'] = time(); 
+                $role = $usuarioDB->admin;
+            }        
             if ($producto != null)
                 $this->viewProd->showProducto($producto,$logged,$role);
             else 

@@ -53,7 +53,13 @@
             if(isset($user)){
                 $usuarioDB = $this->modelUser->getUser($user);
                 $logged = $this->helper->checkLoggedIn();
-                $role = rol($logged);
+                $role = 0;
+                if ($logged){
+                    $usuarioDB = $this->modelUser->getUser($_SESSION["DIRECCION"]);
+                    $_SESSION["DIRECCION"] = $usuarioDB->direccion;
+                    $_SESSION['LAST_ACTIVITY'] = time(); 
+                    $role = $usuarioDB->admin;
+                }  
                 if(isset($usuarioDB) && $usuarioDB){
                     if (password_verify($pass, $usuarioDB->password)){
                         session_start();

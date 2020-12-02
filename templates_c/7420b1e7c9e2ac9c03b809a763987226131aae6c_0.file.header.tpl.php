@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-12-02 19:04:22
+/* Smarty version 3.1.34-dev-7, created on 2020-12-02 20:35:19
   from 'C:\xampp\htdocs\TPEWeb2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc7d7261aa371_57594589',
+  'unifunc' => 'content_5fc7ec7706fdf4_23505063',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7420b1e7c9e2ac9c03b809a763987226131aae6c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPEWeb2\\templates\\header.tpl',
-      1 => 1606931962,
+      1 => 1606936859,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fc7d7261aa371_57594589 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc7ec7706fdf4_23505063 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <html lang="en">
 <head>
@@ -53,7 +53,9 @@ function content_5fc7d7261aa371_57594589 (Smarty_Internal_Template $_smarty_tpl)
                     <?php }?>
                     <?php if ($_smarty_tpl->tpl_vars['logged']->value) {?> <!--Si no esta logueado no muestro estos dos botones-->
                         <li><a class="button" href="logout">Sign Out</a></li>
-                        <li><a class="button" href="administracion">Administrador</a></li>
+                        <?php if ($_smarty_tpl->tpl_vars['role']->value == 1) {?>
+                            <li><a class="button" href="administracion">Administrador</a></li>
+                        <?php }?>
                     <?php }?>
                 </ul>
             </nav>

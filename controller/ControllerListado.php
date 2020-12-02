@@ -21,21 +21,17 @@
             $this->modelUser = new ModelUser();
         }
 
-        function rol($logged){
-            if ($logged){
-                $usuarioDB = $this->modelUser->getUser($_SESSION["DIRECCION"]);
-                $_SESSION["DIRECCION"] = $usuarioDB->direccion;
-                $_SESSION['LAST_ACTIVITY'] = time(); 
-                return $usuarioDB->admin;
-            }else{ 
-                return 0;
-            } 
-        }
         //Funcion que obtiene desde el Model los Productos y se los manda al view para mostrarlos
         function getAndShowListadoCategorias(){
             $categorias = $this->modelCat->getCategorias();
             $logged = $this->helper->checkLoggedIn();
-            $role = rol($logged);
+            $role = 0;
+            if ($logged){
+                $usuarioDB = $this->modelUser->getUser($_SESSION["DIRECCION"]);
+                $_SESSION["DIRECCION"] = $usuarioDB->direccion;
+                $_SESSION['LAST_ACTIVITY'] = time(); 
+                $role = $usuarioDB->admin;
+            }  
             $this->viewList->showList($categorias,$logged,$role);
         } 
 
@@ -43,7 +39,13 @@
             $id = $params[':ID'];
             $categoria = $this->modelCat->getCategoria($id); 
             $logged = $this->helper->checkLoggedIn();
-            $role = rol($logged); 
+            $role = 0;
+            if ($logged){
+                $usuarioDB = $this->modelUser->getUser($_SESSION["DIRECCION"]);
+                $_SESSION["DIRECCION"] = $usuarioDB->direccion;
+                $_SESSION['LAST_ACTIVITY'] = time(); 
+                $role = $usuarioDB->admin;
+            }  
             if ($categoria != null)
                 $this->viewList->showCategoria($categoria,$logged,$role);
             else

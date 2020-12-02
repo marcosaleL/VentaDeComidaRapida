@@ -38,7 +38,7 @@
                 $_SESSION["DIRECCION"] = $usuarioDB->direccion;
                 $_SESSION['LAST_ACTIVITY'] = time(); 
                 $role = $usuarioDB->admin;
-                if($admin == 1){
+                if($role == 1){
                     $productos = $this->modelProd->getProductos();
                     $categorias = $this->modelCat->getCategorias(); 
                     $this->viewAdmin->ShowAdministratorPage($productos, $categorias,$logged,$role);
