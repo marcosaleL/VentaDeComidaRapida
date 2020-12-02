@@ -52,6 +52,11 @@
             $hash = password_hash($pass, PASSWORD_DEFAULT);
             $admin = 0;
             $this->modelUser->insertarUsuario($_POST['nameRegister'],$_POST['lastNameRegister'],$_POST['mailRegister'],$_POST['phoneRegister'],$hash,$admin);
+            $usuarioDB = $this->modelUser->getUser($_POST['mailRegister']);
+            session_start();
+            $_SESSION["DIRECCION"] = $usuarioDB->direccion;
+            $_SESSION['LAST_ACTIVITY'] = time();
+            header("Location: ".BASE_URL."administracion");
         }
 
 
