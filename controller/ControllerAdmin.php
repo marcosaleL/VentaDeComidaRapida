@@ -60,10 +60,6 @@
             }
         }   
 
-
-
-
-
         //Fijarse que ande bien lo de la imagen
         function updateProduct(){
             $id = $this->modelCat->getCategoriaByName($_GET['categoryUpdateProduct']);

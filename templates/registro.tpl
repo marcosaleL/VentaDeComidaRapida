@@ -5,20 +5,17 @@
     <h1 class="titulo">{$titulo}</h1>
     <section class="sectionAdministrator">
         <article class = "articleABSCategoria">  
-            <form class="formRegistro" action="" method="POST">
-                <h3>Registrarse</h3>
+            <form class="formRegistro" action="register" method="POST">
                 <label for="">Nombre:</label>
-                <input type="text" name="" id="" placeholder="Nombre" required>
+                <input type="text" name="nameRegister" id="" placeholder="Nombre" required>
                 <label for="">Apellido:</label>
-                <input type="text" name="" id="" placeholder="Apellido" required>
+                <input type="text" name="lastNameRegister" id="" placeholder="Apellido" required>
                 <label for="">Dirección de correo electronico:</label>
-                <input type="text" name="" id="" placeholder="Dirección de correo electronico" required>
+                <input type="text" name="mailRegister" id="" placeholder="Dirección de correo electronico" required>
                 <label for="">Telefono:</label>
-                <input type="number" name="" id="" placeholder="Telefono" required>
+                <input type="number" name="phoneRegister" id="" placeholder="Telefono" required>
                 <label for="">Password:</label>
-                <input type="password" name="" id="" placeholder="Password" required>
-            </form>
-            <form action="" method="GET">
+                <input type="password" name="passwordRegister" id="" placeholder="Password" required>
                 <input type="submit" value="Registrarse">
             </form>
         </article>

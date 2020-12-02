@@ -1,8 +1,35 @@
-    
-    {include file="./header.tpl"}
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-12-02 14:08:24
+  from 'C:\xampp\htdocs\TPEWeb2\templates\adminPage.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5fc791c8a1f417_32551212',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '3790362dd1531e7480fdf465b391dc4b0ff24454' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\TPEWeb2\\templates\\adminPage.tpl',
+      1 => 1606914501,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:./header.tpl' => 1,
+    'file:./footer.tpl' => 1,
+  ),
+),false)) {
+function content_5fc791c8a1f417_32551212 (Smarty_Internal_Template $_smarty_tpl) {
+?>    
+    <?php $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     <!-- ESTE TEMPLATE ES DEL ADMINISTRADOR -->
     <div class ="mainDivPagina2">
-        <h1 class="titulo">{$titulo}</h1>
+        <h1 class="titulo"><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
+</h1>
         <section class="sectionAdministrator">
             
             <article class = "articleABSCategoria">  
@@ -42,9 +69,17 @@
                     <input type="text" name="precioAddProduct" id="" placeholder="Precio" required>
                     <input type="file" name="imagen">
                     <select name="categoryAddProduct" id="" value="Categoria">
-                        {foreach from=$categorias item=categoria}
-                            <option>{$categoria->nombre}</option>
-                        {/foreach}
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'categoria');
+$_smarty_tpl->tpl_vars['categoria']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->value) {
+$_smarty_tpl->tpl_vars['categoria']->do_else = false;
+?>
+                            <option><?php echo $_smarty_tpl->tpl_vars['categoria']->value->nombre;?>
+</option>
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </select>
                     <input type="submit" value="Añadir">
                 </form>
@@ -58,12 +93,19 @@
                     <input type="text" name="descriptionUpdateProduct" id="" placeholder="Nueva descripcion" required>
                     <input type="text" name="priceUpdateProduct" id="" placeholder="Nuevo precio" required>
                     <select name="categoryUpdateProduct" id="" value="">
-                        {foreach from=$categorias item=categoria}
-                            <option>{$categoria->nombre}</option>
-                        {/foreach}
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'categoria');
+$_smarty_tpl->tpl_vars['categoria']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->value) {
+$_smarty_tpl->tpl_vars['categoria']->do_else = false;
+?>
+                            <option><?php echo $_smarty_tpl->tpl_vars['categoria']->value->nombre;?>
+</option>
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </select>
-                    {* <input type="file" name="imageUpdateProduct" id="" accept=".jpg, .jpeg, .png"> *}
-                    <input type="submit" value="Update">
+                                        <input type="submit" value="Update">
                 </form>
 
                 <form action="removeProduct" method="GET">
@@ -82,4 +124,6 @@
         </section>
     </div>
 
-    {include file="./footer.tpl"}
+    <?php $_smarty_tpl->_subTemplateRender("file:./footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
+}

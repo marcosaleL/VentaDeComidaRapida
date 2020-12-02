@@ -38,7 +38,6 @@ class ModelCategoria{
         $sentencia = $this->db->prepare("INSERT INTO `Categoria`(`nombre`, `descripcion`) VALUES ('$nombre','$descripcion')");
         $sentencia->execute();
         header("Location: ".BASE_URL."administracion");
-        
     }
 
     //Funcion para eliminar un categoria

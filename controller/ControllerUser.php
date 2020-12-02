@@ -46,6 +46,15 @@
                 }
             }
         }
+        
+        function registerUser(){
+            $pass = $_POST['passwordRegister'];
+            $hash = password_hash($pass, PASSWORD_DEFAULT);
+            $admin = 0;
+            $this->modelUser->insertarUsuario($_POST['nameRegister'],$_POST['lastNameRegister'],$_POST['mailRegister'],$_POST['phoneRegister'],$hash,$admin);
+        }
+
+
     }
 
     /*
