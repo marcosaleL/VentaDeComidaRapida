@@ -28,8 +28,8 @@
     $r->addRoute("register","POST","ControllerUser","registerUser");
 
     //Permisos de usuarios
-    $r->addRoute("usuariosAdmin","POST","ControllerAdmin","quitarPermisos");
-    $r->addRoute("usuariosNoAdmin","POST","ControllerAdmin","darPermisos");
+    $r->addRoute("usuariosAdmin","GET","ControllerAdmin","quitarPermisos");
+    $r->addRoute("usuariosNoAdmin","GET","ControllerAdmin","darPermisos");
     
     //Usuario
     $r->addRoute("login", "POST", "ControllerUser", "login");
