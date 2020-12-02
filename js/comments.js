@@ -4,10 +4,12 @@ document.getElementById("commentButton").addEventListener('click', (event) => {
     postComment(event);
 });
 
+/*
 let buttonsDel = document.querySelectorAll(".deleteComment");
 buttonsDel.forEach(boton => {
     boton.addEventListener('click', fetchDeleteComment(boton.id))
 });
+*/
 
 let app = new Vue({
     el: "#commentSection",
@@ -22,7 +24,7 @@ let app = new Vue({
             const res = await fetch("api/delComment/" + id_producto, {
                 method: "DELETE",
             });
-            if (200 < res.status && res.status < 300) { 
+            if (200 <= res.status && res.status < 300) { 
                 fetchComments(); 
             }else
                 if (res.value = 401) {
@@ -41,22 +43,20 @@ let app = new Vue({
 
 
 
-function getComments(){
-    let id = getProductId();
-    fetch("api/comments/" + id)
-    .then(response => response.json())
-    .then(comments => {
-        if(comments.length != 0){
-            app.comments = comments;
-            app.commentexists = true;
-        }
-        else{
-            app.comments = [];
-            app.commentexists = false;
-        }
-    })
-    .catch(error => console.log(error));
+
+async function getComments(){
+    let id_producto = getProductId();
+    const res = await fetch("api/comments/" + id_producto);
+    if (res.ok) {
+        const comments = await res.json();
+        app.comments = comments;
+        app.commentexists = true;
+    } else { 
+        app.commentexists = false; 
+    }
 }
+
+
 
 function getProductId() {
     let params = window.location.href.split("/");
@@ -88,7 +88,7 @@ async function fetchPostComment(texto, valoracion, id_producto) {
         body: JSON.stringify(commentData),
     });
     if (200 < res.status && res.status < 300) {
-        fetchComments();
+        getComments();
     } else {
         if (res.status == 401) {
             //MANDARLO AL LOGIN (NO DE ESTA FORMA)
@@ -97,38 +97,3 @@ async function fetchPostComment(texto, valoracion, id_producto) {
         }
     }
 }
-
-async function fetchComments() {
-    let id_producto = getProductId();
-    const res = await fetch("api/comments/" + id_producto);
-    if (res.ok) {
-        const comments = await res.json();
-        app.comments = comments;
-        app.commentexists = true;
-    } else {
-        app.comments = [];
-        app.commentexists = false; 
-    }
-}
-
- /*
-async function fetchDeleteComment(commentId){
-    res = await fetch("api/delComment/" + commentId, {
-        method: "DELETE"
-    });
-    fetchComments();
-   
-    if (200 < res.status && res.status < 300) { fetchComments(); } else
-        if (res.value = 401) {
-            const arrUrl = window.location.href.split('/');
-            arrUrl.pop();
-            arrUrl.pop();
-            const baseUrl =arrUrl.join('/');
-            window.location.href = baseUrl + "/login";
-        } else {
-            alert("no tienes permisos para lo que intentas hacer")
-        }
-    
-
-}
-*/
