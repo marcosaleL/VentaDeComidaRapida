@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-12-02 01:13:53
+/* Smarty version 3.1.34-dev-7, created on 2020-12-02 14:40:08
   from '/opt/lampp/htdocs/VentaDeComidaRapida/templates/detalleProd.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc6dc41cadca0_66286492',
+  'unifunc' => 'content_5fc79938815f65_43870213',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '91f454c831d2fe36a23320b2d72e183c4acd87e2' => 
     array (
       0 => '/opt/lampp/htdocs/VentaDeComidaRapida/templates/detalleProd.tpl',
-      1 => 1606864592,
+      1 => 1606915061,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc6dc41cadca0_66286492 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc79938815f65_43870213 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <!-- ESTE TEMPLATE  MUESTRA EL DETALLE DEL PRODUCTO POR ID -->
@@ -51,11 +51,9 @@ $_smarty_tpl->_subTemplateRender("file:./header.tpl", $_smarty_tpl->cache_id, $_
             <?php $_smarty_tpl->_subTemplateRender("file:./vue/CommentSection.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
         </div>
-        
         <?php echo '<script'; ?>
  src="js/comments.js"><?php echo '</script'; ?>
 >
-    
 <?php $_smarty_tpl->_subTemplateRender("file:./footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }

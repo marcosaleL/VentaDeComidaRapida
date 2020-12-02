@@ -6,14 +6,15 @@
             <p> {{comment.texto}}</p>
             <!--
             <template v-if="admin">
-                <button v-on:click="fetchDeleteComment(comment.id)" type="button"
-                    class="deleteComment">Delete</button>
-            </template>
             -->
+            <template>
+                <button v-on:click="fetchDeleteComment(comment.id_comentario)" type="button" class="deleteComment">Delete</button>
+            </template>
+            
         </li>
     </ul>
 </div>
-<form method = "POST" id="commentForm" class="commentForm"> 
+<form action ="" method = "POST" id="commentForm" class="commentForm"> 
     <input class="textField" required type="text" name="comment" id="commentTexto" placeholder="your comment here">
     <label for="valoracion">Valoracion</label>
     <select id="valoracion" name="valoracion">
@@ -23,8 +24,7 @@
         <option value="4">4</option>
         <option value="5">5</option>
     </select>
-    <div class="">
-        <button id ="commentButton" type="submit" class="">Comentar</button>
-    </div>
+    <button id ="commentButton" type="submit" class="">Comentar</button>
+
 </form>
 {/literal}
