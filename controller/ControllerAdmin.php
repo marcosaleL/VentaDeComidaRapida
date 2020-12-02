@@ -88,13 +88,13 @@
 
         function permisosUsuarios(){
             $role = 0;
-            if(isset($_POST["usuariosConPermisos"])){
-                $user = $_POST["usuariosConPermisos"];
+            if(isset($_GET["usuariosConPermisos"])){
+                $user = $_GET["usuariosConPermisos"];
                 $role = 1;
             }
             else{
-                if(isset($_POST["usuariosSinPermisos"])){
-                    $user = $_POST["usuariosSinPermisos"];
+                if(isset($_GET["usuariosSinPermisos"])){
+                    $user = $_GET["usuariosSinPermisos"];
                 }
             }
             $this->modelUser->updateUser($role,$user);
