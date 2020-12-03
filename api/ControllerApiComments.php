@@ -59,11 +59,7 @@ class ControllerApiComments extends ApiController {
                     $usuario = $this->userMod->getUser($_SESSION["DIRECCION"]);
                     $user = $usuario->id_usuario;
                     $added= $this->model->addComment($valoracion,$texto,$id_producto,$user);  
-                    if ($added) {
-                        $this->view->response("Se ha agregado un nuevo comentario correctamente.", 201);
-                    } else {
-                        $this->view->response("No se ha podido realizar dicha accion", 404);
-                    }
+                    $this->view->response("Se ha agregado un nuevo comentario correctamente.", 201);
                 }else{
                     $this->view->response("Error de carga de datos", 409); 
                 }

@@ -8,10 +8,10 @@ document.getElementById("commentButton").addEventListener('click', (event) => {
 let app = new Vue({
     el: "#commentSection",
     data: {
-        subtitle: "Subtitle, no se ni lo que es",
+        subtitle: "Renderizado de comentarios",
         comments: [], 
         commentexists: true,
-        admini: true
+        admin: true
     },
     methods: {
         fetchDeleteComment: async function (id_producto) {
@@ -36,8 +36,6 @@ let app = new Vue({
 });
 
 
-
-
 async function getComments(){
     let id_producto = getProductId();
     const res = await fetch("api/comments/" + id_producto);
@@ -49,8 +47,6 @@ async function getComments(){
         app.commentexists = false; 
     }
 }
-
-
 
 function getProductId() {
     let params = window.location.href.split("/");
@@ -69,12 +65,11 @@ function postComment(event) {
 }
 
 
-
 async function fetchPostComment(texto, valoracion, id_producto) {
     let commentData = {
         valoracion: valoracion,
         texto: texto,
-        id_producto: id_producto,
+        id_producto: id_producto
     }
     const res = await fetch("api/comment", {
         method: 'POST',

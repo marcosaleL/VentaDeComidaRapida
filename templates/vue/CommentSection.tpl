@@ -4,10 +4,7 @@
         <li v-if="commentexists" v-for="comment in comments" class="liComentario">
             <div> <span class="spanNombre">{{comment.nombre}}:</span> <span class="spanValor"> {{comment.valoracion}} ✩<span> </div>
             <p> {{comment.texto}}</p>
-            <!--
             <template v-if="admin">
-            -->
-            <template>
                 <button v-on:click="fetchDeleteComment(comment.id_comentario)" type="button" class="deleteComment">Delete</button>
             </template>
             

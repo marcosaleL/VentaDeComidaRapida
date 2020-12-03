@@ -33,9 +33,9 @@ class ModelUser{
         header("Location: ".BASE_URL."administracion");
     }
 
-    function deleteUser($user){
-        $sentencia = $this->db->prepare("DELETE FROM `usuario` WHERE id_usuario=?");
-        $sentencia->execute(array($user));
+    function deleteUser($usuario){
+        $sentencia = $this->db->prepare("DELETE FROM Usuario WHERE id_usuario = ?");
+        $sentencia->execute(array($usuario));
         header("Location: ".BASE_URL."administracion");
     }
 }

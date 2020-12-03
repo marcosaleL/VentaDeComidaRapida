@@ -47,7 +47,6 @@
     $r->addRoute("updateProduct", "GET","ControllerAdmin","updateProduct");
     $r->addRoute("removeProduct/:ID","GET","ControllerProducto","removeProduct");
 
-//  Esta no se si es util
 //  $r->addRoute("updateProduct/:ID", "GET", "ControllerAdmin", "editProduct");
     
     //Default
