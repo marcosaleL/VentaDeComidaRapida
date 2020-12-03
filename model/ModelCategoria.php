@@ -35,8 +35,8 @@ class ModelCategoria{
 
     //Funcion para insertar a la tabla una categoria
     function insertarCategoria($nombre,$descripcion){
-        $sentencia = $this->db->prepare("INSERT INTO `Categoria`(`nombre`, `descripcion`) VALUES ('$nombre','$descripcion')");
-        $sentencia->execute();
+        $sentencia = $this->db->prepare("INSERT INTO `Categoria`(`nombre`, `descripcion`) VALUES (?,?)");
+        $sentencia->execute(array($nombre,$descripcion));
         header("Location: ".BASE_URL."administracion");
     }
 
@@ -58,8 +58,8 @@ class ModelCategoria{
 
     //Funcion para update categoria
     function updateCategoria($nombre, $descripcion, $actualName){
-        $sentencia = $this->db->prepare("UPDATE Categoria SET nombre= '$nombre', descripcion= '$descripcion' WHERE nombre = '$actualName' ");
-        $sentencia->execute();
+        $sentencia = $this->db->prepare("UPDATE Categoria SET nombre= ?, descripcion= ? WHERE nombre = ? ");
+        $sentencia->execute(array($nombre, $descripcion, $actualName));
         header("Location: ".BASE_URL."administracion");
     }
 

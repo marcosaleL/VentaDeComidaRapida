@@ -63,9 +63,11 @@ class ModelProductos{
     //Acomodar la funcion para que acepte imagen!!
     //Funcion para update producto
     function updateProducto($nombre, $descripcion, $precio, $id_categoria, $image , $actualName){
-        //$sentencia = $this->db->prepare("UPDATE Producto SET nombre=" . "\"" . $nombre . "\", descripcion=" . "\"" . $descripcion . "\", precio=" . "\"" . $precio . "\", id_categoria=" . "\"" . $id_categoria . "\", imagen=" . "\"" . $img "\"" . "WHERE nombre = $actualName" . );
-        $sentencia = $this->db->prepare("UPDATE Producto SET nombre= '$nombre', descripcion= '$descripcion', precio=$precio, id_categoria= $id_categoria , imagen= '$image' WHERE nombre = '$actualName' ");
-        $sentencia->execute();
+        $filepath = null;
+        if ($image)
+            $filepath = $this->moveFile($imagen);
+        $sentencia = $this->db->prepare("UPDATE Producto SET nombre= ?, descripcion= ?, precio=?, id_categoria= ? , imagen=  WHERE nombre = ? ");
+        $sentencia->execute(array($nombre, $descripcion, $precio, $id_categoria,$filepath ,$actualName));
         header("Location: ".BASE_URL."administracion");
     }
 }

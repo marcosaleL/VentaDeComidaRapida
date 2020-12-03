@@ -1,12 +1,20 @@
 <?php
 require_once './model/ModelComment.php';
-include_once './api/ViewApi.php';
+require_once './model/ModelUser.php';
+require_once './api/ViewApi.php';
 require_once 'ApiController.php';
 require_once "./Helper.php";
 
 class ControllerApiComments extends ApiController {
 
     private $helper;
+
+    public function __construct() {
+        parent::__construct();
+        $this->helper = new Helper();
+        $this->userMod = new ModelUser();
+    }
+
   
     public function getComments($params = null){
         $id_producto = $params[':ID'];
@@ -23,7 +31,11 @@ class ControllerApiComments extends ApiController {
         $logged = $this->helper->checkLoggedIn();
         $role = 0;
         if ($logged){
-            if(!$role){
+            $usuarioDB = $this->userMod->getUser($_SESSION["DIRECCION"]);
+            $_SESSION["DIRECCION"] = $usuarioDB->direccion;
+            $_SESSION['LAST_ACTIVITY'] = time(); 
+            $role = $usuarioDB->admin;
+            if($role==1){
                 $result = $this->model->deleteComment($id_comment);
                 if ($result > 0) {
                    $this->view->response('El comentario ha sido eliminado correctamente.', 202);
@@ -31,10 +43,10 @@ class ControllerApiComments extends ApiController {
                    $this->view->response('No se ha podido eliminar ese comentario', 404);
                 }
             }else{
-
+                $this->view->response('No tiene los permisos necesarios para realizar esta accion', 202);
             }
-        }
-            
+        }else
+            $this->view->response('Debe estar loggeado para efectuar esta accion', 202); 
     }
 
     function addComment(){
@@ -43,18 +55,19 @@ class ControllerApiComments extends ApiController {
                 $valoracion = $data->valoracion;
                 $texto = $data->texto;
                 $id_producto = $data->id_producto;
-                $helper = new Helper();
-                $helper->checkLoggedIn();
-                $id_usuario = 1;//$_SESSION['DIRECCION'];
-                $added= $this->model->addComment($valoracion,$texto,$id_producto,$id_usuario);
-                if ($added) {
-                    $this->view->response("Se ha agregado un nuevo comentario correctamente.", 201);
-                } else {
-                    $this->view->response("No se ha podido realizar dicha acción", 404);
+                if($this->helper->checkLoggedIn()){
+                    $usuario = $this->userMod->getUser($_SESSION["DIRECCION"]);
+                    $user = $usuario->id_usuario;
+                    $added= $this->model->addComment($valoracion,$texto,$id_producto,$user);  
+                    if ($added) {
+                        $this->view->response("Se ha agregado un nuevo comentario correctamente.", 201);
+                    } else {
+                        $this->view->response("No se ha podido realizar dicha accion", 404);
+                    }
+                }else{
+                    $this->view->response("Error de carga de datos", 409); 
                 }
-            }else{
-                $this->view->response("No se que iria acá", 409); 
-            }
+            }       
     }
 
 }
